@@ -1,0 +1,63 @@
+/*
+	Template Name: Urip Landing Page (Responsive Layout)
+	Template URI: http://worksofwisnu.com/theme-preview/urip
+	Description: RTY Style for Urip Professional HTML Landing Page Template
+	Author: xWisnux (Works of Wisnu)
+	Author URI: http://worksofwisnu.com
+	Version: 1.1
+
+*/
+
+/**
+ * 1.0 SMALL DEVICES (tablets, 768px and up)
+ * -----------------------------------------------------------------------------
+ */
+@media (min-width: 768px) and (max-width: 979px) {
+	/* OUR TEAM SECTION */
+	ul.filter li a:after {
+		right: auto;
+		left: -12px;
+	}
+}
+
+
+/**
+ * 2.0 EXTRA SMALL DEVICES (mobile phone, 320px and up)
+ * -----------------------------------------------------------------------------
+ */
+@media (max-width: 738px) {
+	/* PRICING & SECTION TABS */
+	.section-tab .nav > li:first-child > a {
+		-webkit-border-radius: 0 5px 5px 0;
+		-moz-border-radius: 0 5px 5px 0x;
+		border-radius: 0 5px 5px 0x;
+	}
+
+	.section-tab .nav > li:last-child > a {
+		-webkit-border-radius: 5px 0 0 5px;
+		-moz-border-radius: 5px 0 0 5px;
+		border-radius: 5px 0 0 5px;
+	}
+
+}
+
+@media (max-width: 480px) {
+	/* PRICING & SECTION TABS */
+	.browser-mockup-wrapper .play-btn {
+		left: auto;
+		right: 44%;
+	}
+}
+
+@media (max-width: 320px) {
+  	/* PRICING & SECTION TABS */
+  	ul.pricing > div {
+	  	margin-left: 0;
+	  	margin-right: 8.33333333%;
+  	}
+
+  	/* OUR TEAM SECTION */
+  	.team-item {
+	  	margin-right: 0;
+  	}
+}

@@ -1,0 +1,51 @@
+.main-nav .dropdown:before {
+	content: "\e621";
+	position: absolute;
+	font-family: "Icomoon";
+	color: #fff;
+	left: -25px;
+	top: 4px;
+	font-size: 18px;
+	line-height: 1em;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.main-nav .dropdown.active:before {
+	content: "\e62c";
+}
+
+.main-nav .dropdown-menu {
+	background: #222;
+	margin-left: -40px;
+	padding: 15px 20px;
+	position: relative;
+	top: 0;
+	width: 100%;
+	float: none;
+	min-width: 260px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	box-shadow: none;
+	border: none;
+}
+
+.main-nav .dropdown-menu li {
+	color: #777;
+	margin-bottom: 10px;
+}
+
+.main-nav .dropdown-menu li:last-child {
+	margin-bottom: 0;
+}
+
+.main-nav .dropdown-menu li a {
+	font-size: 14px;
+	text-transform: none !important;
+	color: #eee;
+}
+
+.main-nav .dropdown-menu li a:hover {
+	background: none;
+	color: #fff;
+}
