@@ -1,6 +1,6 @@
 {
   "firebase": "tiffanyandkelvin",
-  "public": "public",
+  "public": "app",
   "ignore": [
     "firebase.json",
     "**/.*",

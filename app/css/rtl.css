@@ -1,0 +1,460 @@
+/*
+	Template Name: Urip Landing Page
+	Template URI: http://worksofwisnu.com/theme-preview/urip
+	Description: RTL style of Urip Professional HTML Landing Page Template
+	Author: xWisnux (Works of Wisnu)
+	Author URI: http://worksofwisnu.com
+	Version: 1.1
+
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - BASIC STRUCTURE
+ *	 1.1 - Custom Margin
+ *
+ * 2.0 - COMPONENTS
+ *	 2.1 - Buttons
+ *	 2.2 - Lists
+ *	 2.3 - Content Tab
+ *	 2.4 - Section Tab
+ *	 2.5 - Toggle
+ *	 2.6 - Contact Modal
+ *	 2.7 - Alert Notification
+ *	 2.8 - Lightbox Modal
+ *	 2.9 - To Top Button
+ *
+ * 3.0 - HEADER & HERO SECTION
+ *	 3.1 - Menu Toggle
+ *	 3.2 - Navigation
+ *	 3.3 - Hero Subscribe Form
+ *	 3.4 - Animated Headline
+ *
+ * 4.0 - WHAT WE DO SECTION
+ *	 4.1 - Introduction on App Layout
+ *
+ * 5.0 - HOW IT WORKS SECTION
+ *
+ * 6.0 - OUR FEATURES SECTI0N
+ * 	 6.1 - The Feature on App Layout
+ *
+ * 7.0 - FEATURETTES SECTION
+ *
+ * 8.0 - PRICING & SECTION TABS
+ *
+ * 9.0 - OUR TEAM SECTION
+ *	 9.1 - App Layout Carousel
+ *
+ * 10.0 - PORTFOLIO SECTION
+ *
+ * 11.0 - FOOTER SUBSCRIBE
+ *
+ * 12.0 - MAIN FOOTER SECTION
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 1.0 BASIC STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
+.pull-left {
+	float: right!important;
+}
+
+.pull-right {
+  float: left!important;
+}
+
+ul {
+	padding-right: 0;
+}
+
+/* 1.1 Custom Margin */
+.zero-right {
+	margin-left: 0 !important;
+}
+
+.zero-left {
+	margin-right: 0 !important;
+}
+/* -- */
+
+
+/**
+ * 2.0 COMPONENTS
+ * -----------------------------------------------------------------------------
+ */
+
+/* 2.1 Buttons */
+.cta {
+	  white-space: nowrap;
+}
+
+.cta-default:after,
+.cta-stroke:after {
+	display: inline-block;
+	margin-right: 0;
+	content: '\e629';
+}
+
+.cta-default:hover:after,
+.cta-stroke:hover:after {
+	margin-left: 0;
+	margin-right: 8px;
+}
+/* -- */
+
+/* 2.2 Lists */
+ul.checklist {
+	margin-bottom: 30px;
+}
+
+ul.checklist li {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+ul.checklist li:before {
+	margin-left: 12px;
+	margin-right: -30px;
+	position: absolute;
+}
+/* -- */
+
+/* 2.3 Content Tab */
+.content-tab-wrapper .nav-tabs > li.active:before,
+.content-tab-wrapper .nav-tabs > li.active:after {
+	left: 0;
+	right: 50%;
+}
+
+.content-tab-wrapper .nav-tabs > li.active:before {
+	margin-left: 0;
+	margin-right: -11px;
+}
+
+.content-tab-wrapper .nav-tabs > li.active:after {
+	margin-left: 0;
+	margin-right: -10px;
+}
+/* -- */
+
+/* 2.4 Section Tab */
+.section-tab .nav > li > a {
+	white-space: nowrap;
+}
+
+.section-tab .nav > li:first-child > a {
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+
+.section-tab .nav > li:last-child > a {
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+}
+/* -- */
+
+/* 2.5 Toggle */
+.panel-heading a:after {
+	right: auto;
+	left: 0;
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+}
+/* -- */
+
+/* 2.6 Contact Modal */
+a.overlay-close {
+	right: auto;
+	left: 30px;
+	text-indent: -100%;
+}
+
+.contact-form .submit-btn:before {
+	left: auto;
+	right: 130%;
+}
+
+.contact-form .submit-btn:hover:before {
+	left: auto;
+	right: 75%;
+}
+
+.required-field:after {
+	right: auto;
+	left: -10px;
+}
+/* -- */
+
+/* 2.7 Alert Notification */
+.notif-box span.notif-icon{
+	left: auto;
+	right: .6em;
+}
+
+.notif-box.show-up span.notif-icon {
+	opacity: 1;
+}
+
+.notif-box a.notification-close {
+	right: auto;
+	left: 1em;
+	text-indent: -100%;
+}
+/* -- */
+
+/* 2.8 Lightbox Modal */
+#swipebox-close {
+	right: auto;
+	left: 30px;
+	text-indent: -100%;
+}
+
+/* 2.9 To Top Button */
+#to-top {
+	right: auto;
+	left: 30px;
+}
+
+
+/**
+ * 3.0 HEADER & HERO SECTION
+ * -----------------------------------------------------------------------------
+ */
+/* 3.1 Menu Toggle */
+a.menu-toggle span {
+	padding-right: 10px;
+	padding-left: 0;
+	float: left;
+	font-size: 20px;
+}
+/* -- */
+
+/* 3.2 Navigation */
+#nav-wrapper {
+	right: auto;
+	left: 0 !important;
+	padding: 45px 40px;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	-ms-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.touch .nav-close {
+	right: auto;
+	left: 0;
+}
+
+.main-nav .dropdown:before {
+	left: auto;
+	right: -25px;
+}
+
+.main-nav .dropdown.active:before {
+	content: "\e62c";
+}
+
+.main-nav .dropdown-menu {
+	margin-left: 0;
+	margin-right: -40px;
+}
+/* -- */
+
+.hero-split-left {
+	left: auto;
+	right: 0;
+}
+
+.hero-split-right {
+	right: auto;
+	left: 0;
+}
+
+/* 3.3 Hero Subscribe Form */
+.hero-subscribe-wrapper form .input-group input {
+	-webkit-border-radius: 0 8px 8px 0 !important;
+	-moz-border-radius: 0 8px 8px 0 !important;
+	border-radius: 0 8px 8px 0 !important;
+}
+
+.hero-subscribe-wrapper form .input-group .btn-subscribe {
+	margin-right: 0;
+	-webkit-border-radius: 8px 0 0 8px;
+	-moz-border-radius: 8px 0 0 8px;
+	border-radius: 8px 0 0 8px;
+}
+
+.hero-subscribe-wrapper form .input-group .btn-subscribe:before {
+	left: auto;
+	right: 130%;
+	content: "\e629";
+}
+
+.hero-subscribe-wrapper form .input-group .btn-subscribe:hover:before {
+	left: auto;
+	right: 81%;
+}
+/* -- */
+
+.hero-content a.cta span {
+	padding-right: 5px;
+	float: left;
+}
+
+/* 3.4 Animated Headline */
+.animated-words-wrapper {
+	text-align: right;
+}
+
+
+/**
+ * 4.0 WHAT WE DO SECTION
+ * -----------------------------------------------------------------------------
+ */
+/* 4.1 Introduction on App Layout */
+#introduction:after {
+	left: auto;
+	right: 0;
+}
+
+
+/**
+ * 5.0 HOW IT WORKS SECTION
+ * -----------------------------------------------------------------------------
+ */
+ul.how-it-works-col li {
+	float: right;
+}
+
+
+ul.how-it-works-col li:first-child .how-it-works-info:after,
+ul.how-it-works-col li:nth-child(2) .how-it-works-info:after {
+	background: url(../images/arrow-left.png) no-repeat left;
+}
+
+/**
+ * 6.0 OUR FEATURES SECTI0N
+ * -----------------------------------------------------------------------------
+ */
+
+/* 6.1 The Feature on App Layout */
+.left-features .the-feature {
+	text-align: left;
+}
+
+/**
+  * 7.0 FEATURETTES SECTION
+  * -----------------------------------------------------------------------------
+  */
+
+.expandable-gallery-info {
+	right: auto !important;
+	left: 0 !important;
+}
+
+/**
+  * 8.0 PRICING & SECTION TABS
+  * -----------------------------------------------------------------------------
+  */
+.browser-mockup-wrapper .play-btn {
+	left: auto;
+	right: 46%;
+}
+
+/**
+  * 9.0 OUR TEAM SECTION
+  * -----------------------------------------------------------------------------
+  */
+.mobile-filter-select span {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+/* 9.1 App Layout Carousel */
+.app-carousel {
+	direction: ltr;
+}
+
+
+/**
+  * 10.0 PORTFOLIO SECTION
+  * -----------------------------------------------------------------------------
+  */
+ul.portfolio-filter li a:after {
+	right: auto;
+	left: -12px;
+}
+
+ul.portfolio-list li {
+	float: right;
+}
+
+
+ul.portfolio-list li figcaption {
+	left: auto;
+	right: 0;
+}
+
+ul.portfolio-list li figcaption .caption-content {
+	left: auto;
+	right: 50%;
+	margin-left: 0;
+	margin-right: -100px;
+}
+
+
+/**
+  * 11.0 FOOTER SUBSCRIBE
+  * -----------------------------------------------------------------------------
+  */
+#footer-subscribe input[type="email"] {
+	-webkit-border-radius: 0 8px 8px 0;
+	-moz-border-radius: 0 8px 8px 0;
+	border-radius: 0 8px 8px 0;
+}
+
+#footer-subscribe .btn-subscribe {
+	margin-right: 0;
+	-webkit-border-radius: 8px 0 0 8px;
+	-moz-border-radius: 8px 0 0 8px;
+	border-radius: 8px 0 0 8px;
+}
+
+#footer-subscribe .btn-subscribe:before {
+	left: auto;
+	right: 130%;
+	height: 100%;
+	content: "\e629";
+}
+
+#footer-subscribe .btn-subscribe:hover:before {
+	left: auto;
+	right: 81%;
+}
+
+
+/**
+  * 12.0 MAIN FOOTER SECTION
+  * -----------------------------------------------------------------------------
+  */
+
+#main-footer {
+	left: auto;
+	right: 0;
+}
+
+.copyright .language:before {
+	margin-left: 11px;
+	margin-right: 9px;
+}
+
+.copyright .language span[class^="icon-"] {
+	margin-right: 0;
+	margin-left: 5px;
+}

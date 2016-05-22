@@ -1,0 +1,13 @@
+.main-nav .dropdown:before {
+	left: auto;
+	right: -25px;
+}
+
+.main-nav .dropdown.active:before {
+	content: "\e62c";
+}
+
+.main-nav .dropdown-menu {
+	margin-left: 0;
+	margin-right: -40px;
+}
