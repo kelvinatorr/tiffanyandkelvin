@@ -21,9 +21,9 @@
             })
             .state('rsvp-code', {
                 url: '/rsvp-code',
-                templateUrl: 'app/rsvp-code/rsvp-code.html'
-                //controller: 'FlowPatternCtrl',
-                //controllerAs: 'vm',
+                templateUrl: 'app/rsvp-code/rsvp-code.html',
+                controller: 'RSVPCodeCtrl',
+                controllerAs: 'vm'
                 //resolve: {
                 //    FlowPatterns: ['FlowPattern', '$stateParams', function (FlowPattern, $stateParams) {
                 //        return FlowPattern.init($stateParams.kpiId);

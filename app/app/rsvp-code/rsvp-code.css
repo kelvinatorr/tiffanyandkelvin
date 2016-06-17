@@ -1,0 +1,28 @@
+.touch .contact-overlay {
+    display: block;
+}
+
+.contact-form .submit-button {
+    /*opacity: 0.5;*/
+    /*background-color: lightgrey;*/
+    position: relative;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-shadow: none;
+    color: #fff;
+
+    min-width: 170px;
+    height: 50px;
+    background: #19a9e5;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.contact-form .submit-button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
