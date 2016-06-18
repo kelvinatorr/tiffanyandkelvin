@@ -7,14 +7,16 @@
                 <p>Enter your RSVP code below</p>
                 <!-- BEGIN Contact Form -->
                 <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
-                    <form class="contact-form" id="contact-form" name="vm.form" novalidate ng-submit="vm.form.$valid && vm.submit()">
+                    <form class="contact-form" id="contact-form" name="vm.form" novalidate
+                          ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <div class="required-field">
                                     <input name="fname" class="contact-input" type="text"
                                            placeholder="RSVP Code" required ng-model="vm.formModel.code" autofocus>
-                                </div> <!--/ .required-field -->
-                            </div> <!--/ .col-lg-6 -->
+                                </div>
+                            </div>
+                            <p class="tak-error-message" ng-if="vm.invalidCode">Sorry, this code is invalid.</p>
                             <!--<div class="col-lg-6 col-md-6">-->
 
                                 <!--<input name="lname" id="lname" class="contact-input" type="text"-->
@@ -46,7 +48,7 @@
 
                             <!--</div> &lt;!&ndash;/ .col-lg-12 &ndash;&gt;-->
                             <div class="col-lg-12 col-md-12 all-caps centered">
-                                <button type="submit" class="submit-button" ng-disabled="vm.form.$invalid">
+                                <button type="submit" class="submit-button" ng-disabled="vm.form.$invalid || vm.isBusy">
                                     Submit
                                 </button>
                             </div> <!--/ .col-lg-12 -->
