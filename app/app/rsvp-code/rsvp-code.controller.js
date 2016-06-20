@@ -20,14 +20,25 @@
 
         vm.isBusy = false;
 
-        vm.invalidCode = false;
+        vm.invalidCode = null;
+
+        vm.codeWatcher = codeWatcher;
+
+
+        function codeWatcher(code) {
+            if(vm.invalidCode) {
+                if(code !== vm.invalidCode) {
+                    vm.invalidCode = null;
+                }
+            }
+        }
 
         function submit(formModel) {
             vm.isBusy = true;
             RSVPFactory.getData(formModel.code).then(function(result) {
                 // show error message when null
                 if(!result.data) {
-                    vm.invalidCode = true;
+                    vm.invalidCode = formModel.code;
                 } else {
                     //TODO: go to rsvp state with code
                 }

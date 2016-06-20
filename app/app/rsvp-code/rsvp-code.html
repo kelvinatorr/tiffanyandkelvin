@@ -10,43 +10,20 @@
                     <form class="contact-form" id="contact-form" name="vm.form" novalidate
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12">
-                                <div class="required-field">
-                                    <input name="fname" class="contact-input" type="text"
-                                           placeholder="RSVP Code" required ng-model="vm.formModel.code" autofocus>
+                            <div class="col-lg-12 col-md-12 tak-input-div">
+                                <div class="required-field"
+                                     ng-class="{'field-error': vm.form.code.$invalid && vm.form.code.$dirty}">
+                                    <input name="code" class="contact-input" type="text"
+                                           placeholder="RSVP Code" required ng-model="vm.formModel.code" autofocus
+                                            ng-change="vm.codeWatcher(vm.formModel.code);">
                                 </div>
+                                <span class="tak-error-message" ng-if="vm.form.code.$dirty && vm.form.code.$invalid">
+                                    A code is required
+                                </span>
+                                <span class="tak-error-message" ng-if="vm.invalidCode && !vm.form.code.$invalid">
+                                    Sorry, this code is invalid.
+                                </span>
                             </div>
-                            <p class="tak-error-message" ng-if="vm.invalidCode">Sorry, this code is invalid.</p>
-                            <!--<div class="col-lg-6 col-md-6">-->
-
-                                <!--<input name="lname" id="lname" class="contact-input" type="text"-->
-                                       <!--placeholder="Last Name">-->
-
-                            <!--</div> &lt;!&ndash;/ .col-lg-6 &ndash;&gt;-->
-
-                            <!--<div class="col-lg-12 col-md-12">-->
-
-                                <!--<div class="required-field">-->
-                                    <!--<input name="email" id="email" class="contact-input" type="email"-->
-                                           <!--placeholder="Email Address">-->
-                                <!--</div> &lt;!&ndash;/ .required-field &ndash;&gt;-->
-
-                            <!--</div> &lt;!&ndash;/ .col-lg-12 &ndash;&gt;-->
-
-                            <!--<div class="col-lg-12 col-md-12">-->
-
-                                <!--<input name="subject" id="subject" class="contact-input" type="text"-->
-                                       <!--placeholder="Subject">-->
-
-                            <!--</div> &lt;!&ndash;/ .col-lg-12 &ndash;&gt;-->
-
-                            <!--<div class="col-lg-12 col-md-12">-->
-
-                                <!--<div class="required-field">-->
-                                    <!--<textarea name="message" id="message" rows="9" placeholder="Message"></textarea>-->
-                                <!--</div> &lt;!&ndash;/ .required-field &ndash;&gt;-->
-
-                            <!--</div> &lt;!&ndash;/ .col-lg-12 &ndash;&gt;-->
                             <div class="col-lg-12 col-md-12 all-caps centered">
                                 <button type="submit" class="submit-button" ng-disabled="vm.form.$invalid || vm.isBusy">
                                     Submit
