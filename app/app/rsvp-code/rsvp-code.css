@@ -30,3 +30,15 @@
 .contact-content .tak-error-message {
     color: #c12e2a;
 }
+
+.contact-form .tak-input-div {
+    margin-bottom: 30px;
+}
+
+.contact-form .contact-input {
+    margin-bottom: 0;
+}
+
+.contact-overlay>a.overlay-close {
+    position: absolute;
+}

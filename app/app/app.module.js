@@ -29,7 +29,19 @@
                 //        return FlowPattern.init($stateParams.kpiId);
                 //    }]
                 //}
-            });
+            })
+            .state('rsvp', {
+                url: '/rsvp/:code',
+                templateUrl: 'app/rsvp/rsvp.html',
+                controller: 'RSVPCtrl',
+                controllerAs: 'vm'
+                //resolve: {
+                //    FlowPatterns: ['FlowPattern', '$stateParams', function (FlowPattern, $stateParams) {
+                //        return FlowPattern.init($stateParams.kpiId);
+                //    }]
+                //}
+            })
+
 
         $urlRouterProvider.otherwise('/main');
         // Remove debug info when in production.
