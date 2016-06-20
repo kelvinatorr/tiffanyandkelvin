@@ -11,10 +11,10 @@
         var vm = this;
 
         vm.formModel = {
-            firstName: 'Kelvin',
-            lastName: 'Dealca',
-            plusOneFirstName: 'Tiffany',
-            plusOneLastName: 'Chau'
+            firstName: '',
+            lastName: '',
+            plusOneFirstName: '',
+            plusOneLastName: ''
         };
 
         vm.form = {};

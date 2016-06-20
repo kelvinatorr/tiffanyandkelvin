@@ -11,7 +11,8 @@
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field" ng-class="{'field-error': vm.form.firstName.$invalid}">
+                                <div class="required-field"
+                                     ng-class="{'field-error': vm.form.firstName.$invalid && vm.form.firstName.$dirty} ">
                                     <input name="firstName" class="contact-input" type="text"
                                            placeholder="First Name" required ng-model="vm.formModel.firstName" autofocus>
                                 </div>
@@ -20,7 +21,8 @@
                                 </span>
                             </div>
                             <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field" ng-class="{'field-error': vm.form.lastName.$invalid}">
+                                <div class="required-field"
+                                     ng-class="{'field-error': vm.form.lastName.$invalid && vm.form.lastName.$dirty}">
                                     <input name="lastName" class="contact-input" type="text"
                                            placeholder="Last Name" required ng-model="vm.formModel.lastName">
                                 </div>
@@ -29,7 +31,8 @@
                                 </span>
                             </div>
                             <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field" ng-class="{'field-error': vm.form.plusOneFirstName.$invalid}">
+                                <div class="required-field"
+                                     ng-class="{'field-error': vm.form.plusOneFirstName.$invalid && vm.form.plusOneFirstName.$dirty}">
                                     <input name="plusOneFirstName" id="plusOneFirstName" class="contact-input" type="text"
                                         placeholder="+1 First Name" required ng-model="vm.formModel.plusOneFirstName"/>
 
@@ -39,7 +42,8 @@
                                 </span>
                             </div>
                             <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field" ng-class="{'field-error': vm.form.plusOneLastName.$invalid}">
+                                <div class="required-field"
+                                     ng-class="{'field-error': vm.form.plusOneLastName.$invalid && vm.form.plusOneLastName.$dirty}">
                                     <input name="plusOneLastName" class="contact-input" type="text"
                                            placeholder="+1 Last Name" required ng-model="vm.formModel.plusOneLastName"/>
                                 </div>
