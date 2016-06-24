@@ -7,15 +7,10 @@
     angular.module('tiffanyAndKelvin')
         .controller('RSVPCtrl', RSVPCtrl);
 
-    function RSVPCtrl() {
+    function RSVPCtrl(rsvpData) {
         var vm = this;
 
-        vm.formModel = {
-            firstName: '',
-            lastName: '',
-            plusOneFirstName: '',
-            plusOneLastName: ''
-        };
+        vm.formModel = rsvpData.data;
 
         vm.form = {};
 

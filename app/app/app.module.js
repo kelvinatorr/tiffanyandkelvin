@@ -34,13 +34,18 @@
                 url: '/rsvp/:code',
                 templateUrl: 'app/rsvp/rsvp.html',
                 controller: 'RSVPCtrl',
-                controllerAs: 'vm'
-                //resolve: {
-                //    FlowPatterns: ['FlowPattern', '$stateParams', function (FlowPattern, $stateParams) {
-                //        return FlowPattern.init($stateParams.kpiId);
-                //    }]
-                //}
-            })
+                controllerAs: 'vm',
+                resolve: {
+                    rsvpData: ['RSVPFactory', '$stateParams', function (RSVPFactory, $stateParams) {
+                        console.log(RSVPFactory.key);
+                        if($stateParams.code === RSVPFactory.key) {
+                            return RSVPFactory;
+                        } else {
+                            return RSVPFactory.getData($stateParams.code);
+                        }
+                    }]
+                }
+            });
 
 
         $urlRouterProvider.otherwise('/main');

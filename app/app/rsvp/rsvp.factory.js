@@ -9,17 +9,23 @@
 
     function RSVPFactory($q) {
         return {
-            data: {},
+            data: null,
+            key: null,
             getData: getData
         };
 
         function getData(code) {
             var self = this;
-            return $q(function(resolve) {
+            return $q(function(resolve, reject) {
                 var ref = firebase.database().ref('codes/' + code);
                 ref.on('value', function(snapshot) {
                     self.data = snapshot.val();
-                    resolve(self);
+                    if(self.data) {
+                        self.key = snapshot.key;
+                        resolve(self);
+                    } else {
+                        reject(null);
+                    }
                 });
             });
         }

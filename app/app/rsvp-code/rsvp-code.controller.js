@@ -7,7 +7,7 @@
     angular.module('tiffanyAndKelvin')
         .controller('RSVPCodeCtrl', RSVPCodeCtrl);
 
-    function RSVPCodeCtrl(RSVPFactory) {
+    function RSVPCodeCtrl(RSVPFactory, $state) {
         var vm = this;
 
         vm.form = {};
@@ -35,13 +35,12 @@
 
         function submit(formModel) {
             vm.isBusy = true;
-            RSVPFactory.getData(formModel.code).then(function(result) {
+            RSVPFactory.getData(formModel.code).then(function() {
+                $state.go('rsvp', {code: formModel.code});
+            }).catch(function() {
                 // show error message when null
-                if(!result.data) {
-                    vm.invalidCode = formModel.code;
-                } else {
-                    //TODO: go to rsvp state with code
-                }
+                vm.invalidCode = formModel.code;
+            }).then(function() {
                 vm.isBusy = false;
             });
         }
