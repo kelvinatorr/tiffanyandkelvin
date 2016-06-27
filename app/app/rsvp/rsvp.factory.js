@@ -11,7 +11,8 @@
         return {
             data: null,
             key: null,
-            getData: getData
+            getData: getData,
+            save: save
         };
 
         function getData(code) {
@@ -27,6 +28,12 @@
                         reject(null);
                     }
                 });
+            });
+        }
+
+        function save() {
+            return $q(function(resolve, reject) {
+                resolve();
             });
         }
     }

@@ -19,7 +19,12 @@
         vm.submit = submit;
 
         function submit(formModel) {
+            rsvpData.save(formModel).then(function() {
+                // show toast
+                $('#success-notification').addClass('show-up');
+            }).catch(function() {
 
+            });
         }
     }
 })();
