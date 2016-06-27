@@ -18,6 +18,12 @@
 
         vm.submit = submit;
 
+        vm.closeToast = closeToast;
+
+        function closeToast() {
+            $('#success-notification').removeClass('show-up');
+        }
+
         function submit(formModel) {
             rsvpData.save(formModel).then(function() {
                 // show toast
