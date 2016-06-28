@@ -22,21 +22,28 @@
 
         vm.showErrors = showErrors;
 
+        vm.showCloseButton = true;
+
         function showErrors(element, idx) {
             var key = element + idx;
             return vm.form[key].$dirty && vm.form[key].$invalid;
         }
 
-        function closeToast() {
-            $('#success-notification').removeClass('show-up');
+        function closeToast(status) {
+            $('#' + status +'-notification').removeClass('show-up');
+            vm.showCloseButton = true;
         }
 
         function submit(formModel) {
+            vm.isSaving = true;
             rsvpData.save(formModel).then(function() {
                 // show toast
                 $('#success-notification').addClass('show-up');
             }).catch(function() {
-
+                $('#error-notification').addClass('show-up');
+            }).then(function() {
+                vm.isSaving = false;
+                vm.showCloseButton = false;
             });
         }
     }

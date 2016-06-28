@@ -31,9 +31,11 @@
             });
         }
 
-        function save() {
+        function save(newData) {
+            var self = this;
+            console.log(newData);
             return $q(function(resolve, reject) {
-                resolve();
+                firebase.database().ref('codes/' + self.key).set(newData).then(resolve).catch(reject);
             });
         }
     }

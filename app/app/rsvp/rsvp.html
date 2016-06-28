@@ -1,5 +1,5 @@
 <div class="contact-overlay">
-    <a class="overlay-close" ui-sref="landing"></a>
+    <a class="overlay-close" ui-sref="landing" ng-if="vm.showCloseButton"></a>
     <div class="container">
         <div class="row">
             <div class="contact-content col-lg-10 col-lg-offset-1 centered">
@@ -49,8 +49,6 @@
                                 </button>
                             </div>
                         </div>
-
-                        </div>
                     </form> <!--/ .contact-form -->
                 </div> <!--/ .col-lg-6 -->
                 <!--/ END Contact Form -->
@@ -61,5 +59,10 @@
 <div id="success-notification" class="notif-box">
     <span class="icon-checkmark notif-icon"></span>
     <p>Thank you for your response.</p>
-    <a class="notification-close" ng-click="vm.closeToast()">Close</a>
-</div> <!--/ #success-notification -->
+    <a class="notification-close" ng-click="vm.closeToast('success')">Close</a>
+</div>
+<div id="error-notification" class="notif-box">
+    <span class="icon-bullhorn notif-icon"></span>
+    <p>There was a problem saving your response. Please try again.</p>
+    <a class="notification-close" ng-click="vm.closeToast('error')">Close</a>
+</div>
