@@ -6,58 +6,50 @@
                 <h2 class="all-caps"> Répondez s'il vous plaît </h2>
                 <p>Enter your information below</p>
                 <!-- BEGIN Contact Form -->
-                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <form class="contact-form" id="contact-form" name="vm.form" novalidate
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 tak-input-div">
+                        <div class="row" ng-repeat-start="p in vm.formModel">
+                            <div class="col-lg-4 col-md-4 tak-input-div">
                                 <div class="required-field"
-                                     ng-class="{'field-error': vm.form.firstName.$invalid && vm.form.firstName.$dirty} ">
-                                    <input name="firstName" class="contact-input" type="text"
-                                           placeholder="First Name" required ng-model="vm.formModel.firstName" autofocus>
+                                     ng-class="{'field-error': vm.showErrors('firstName', $index)} ">
+                                    <input name="firstName{{::$index}}" class="contact-input" type="text"
+                                           placeholder="First Name" required ng-model="p.firstName" autofocus>
                                 </div>
-                                <span class="tak-error-message" ng-show="vm.form.firstName.$dirty && vm.form.firstName.$invalid">
+                                <span class="tak-error-message" ng-show="vm.showErrors('firstName', $index)">
                                     First Name is required
                                 </span>
                             </div>
-                            <div class="col-lg-12 col-md-12 tak-input-div">
+                            <div class="col-lg-4 col-md-4 tak-input-div">
                                 <div class="required-field"
-                                     ng-class="{'field-error': vm.form.lastName.$invalid && vm.form.lastName.$dirty}">
-                                    <input name="lastName" class="contact-input" type="text"
-                                           placeholder="Last Name" required ng-model="vm.formModel.lastName">
+                                     ng-class="{'field-error': vm.showErrors('lastName', $index)}">
+                                    <input name="lastName{{::$index}}" class="contact-input" type="text"
+                                           placeholder="Last Name" required ng-model="p.lastName">
                                 </div>
-                                <span class="tak-error-message" ng-show="vm.form.lastName.$dirty && vm.form.lastName.$invalid">
+                                <span class="tak-error-message" ng-show="vm.showErrors('lastName', $index)">
                                     Last Name is required
                                 </span>
                             </div>
-                            <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field"
-                                     ng-class="{'field-error': vm.form.plusOneFirstName.$invalid && vm.form.plusOneFirstName.$dirty}">
-                                    <input name="plusOneFirstName" id="plusOneFirstName" class="contact-input" type="text"
-                                        placeholder="+1 First Name" required ng-model="vm.formModel.plusOneFirstName"/>
-
-                                </div>
-                                <span class="tak-error-message" ng-show="vm.form.plusOneFirstName.$dirty && vm.form.plusOneFirstName.$invalid">
-                                    +1 First Name is required
-                                </span>
+                            <div class="col-lg-4 col-md-4 tak-input-div">
+                                <select class="contact-input" ng-model="p.going">
+                                    <option value="1">
+                                        is going
+                                    </option>
+                                    <option value="0">
+                                        is not going
+                                    </option>
+                                </select>
                             </div>
-                            <div class="col-lg-12 col-md-12 tak-input-div">
-                                <div class="required-field"
-                                     ng-class="{'field-error': vm.form.plusOneLastName.$invalid && vm.form.plusOneLastName.$dirty}">
-                                    <input name="plusOneLastName" class="contact-input" type="text"
-                                           placeholder="+1 Last Name" required ng-model="vm.formModel.plusOneLastName"/>
-                                </div>
-                                <span class="tak-error-message" ng-show="vm.form.plusOneLastName.$dirty && vm.form.plusOneLastName.$invalid">
-                                    +1 Last Name is required
-                                </span>
-                            </div>
-
-
+                        </div>
+                        <hr class="hidden-lg hidden-md tak-margin-top-0" ng-repeat-end>
+                        <div class="row">
                             <div class="col-lg-12 col-md-12 all-caps centered">
                                 <button type="submit" class="submit-button" ng-disabled="vm.form.$invalid || vm.isSaving">
-                                    Submit
+                                    Save
                                 </button>
-                            </div> <!--/ .col-lg-12 -->
+                            </div>
+                        </div>
+
                         </div>
                     </form> <!--/ .contact-form -->
                 </div> <!--/ .col-lg-6 -->
@@ -69,6 +61,5 @@
 <div id="success-notification" class="notif-box">
     <span class="icon-checkmark notif-icon"></span>
     <p>Thank you for your response.</p>
-    <a class="notification-close">Close</a>
     <a class="notification-close" ng-click="vm.closeToast()">Close</a>
 </div> <!--/ #success-notification -->

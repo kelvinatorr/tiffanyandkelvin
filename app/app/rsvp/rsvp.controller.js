@@ -20,6 +20,13 @@
 
         vm.closeToast = closeToast;
 
+        vm.showErrors = showErrors;
+
+        function showErrors(element, idx) {
+            var key = element + idx;
+            return vm.form[key].$dirty && vm.form[key].$invalid;
+        }
+
         function closeToast() {
             $('#success-notification').removeClass('show-up');
         }
