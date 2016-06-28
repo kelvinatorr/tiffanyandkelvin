@@ -7,7 +7,7 @@
     angular.module('tiffanyAndKelvin')
         .factory('RSVPFactory', RSVPFactory);
 
-    function RSVPFactory($q) {
+    function RSVPFactory($q, FirebaseFactory) {
         return {
             data: null,
             key: null,
@@ -18,7 +18,7 @@
         function getData(code) {
             var self = this;
             return $q(function(resolve, reject) {
-                var ref = firebase.database().ref('codes/' + code);
+                var ref = FirebaseFactory.database.ref('codes/' + code);
                 ref.on('value', function(snapshot) {
                     self.data = snapshot.val();
                     if(self.data) {
@@ -33,9 +33,8 @@
 
         function save(newData) {
             var self = this;
-            console.log(newData);
             return $q(function(resolve, reject) {
-                firebase.database().ref('codes/' + self.key).set(newData).then(resolve).catch(reject);
+                FirebaseFactory.database.ref('codes/' + self.key).set(newData).then(resolve).catch(reject);
             });
         }
     }
