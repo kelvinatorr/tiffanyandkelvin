@@ -29,8 +29,8 @@ module.exports = function(config) {
             // endbower
             "app/app/**/*.js",
             //"test/mock/**/*.js",
-            "test/spec/**/*.js"
-            //"app/views/**/*.html"
+            "test/spec/**/*.js",
+            "app/app/**/*.html"
         ],
 
         // list of files / patterns to exclude
@@ -40,7 +40,7 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            "app/views/**/*.html": ['ng-html2js']
+            "app/app/**/*.html": ['ng-html2js']
         },
         //
         ngHtml2JsPreprocessor: {
