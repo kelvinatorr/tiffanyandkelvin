@@ -9,29 +9,29 @@
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <form class="contact-form" id="contact-form" name="vm.form" novalidate
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
-                        <div class="row" ng-repeat-start="p in vm.formModel">
+                        <div class="row" ng-repeat-start="p in ::vm.formModel">
                             <div class="col-lg-4 col-md-4 tak-input-div">
-                                <div class="required-field"
-                                     ng-class="{'field-error': vm.showErrors('firstName', $index)} ">
+                                <div ng-class="{'field-error': vm.showErrors('lastName', $index), 'required-field': !p.disabledName}">
                                     <input name="firstName{{::$index}}" class="contact-input" type="text"
-                                           placeholder="First Name" required ng-model="p.firstName" autofocus>
+                                           placeholder="First Name" required ng-model="p.firstName" ng-disabled="p.disabledName">
                                 </div>
                                 <span class="tak-error-message" ng-show="vm.showErrors('firstName', $index)">
                                     First Name is required
                                 </span>
                             </div>
                             <div class="col-lg-4 col-md-4 tak-input-div">
-                                <div class="required-field"
-                                     ng-class="{'field-error': vm.showErrors('lastName', $index)}">
+                                <div ng-class="{'field-error': vm.showErrors('lastName', $index), 'required-field': !p.disabledName}">
                                     <input name="lastName{{::$index}}" class="contact-input" type="text"
-                                           placeholder="Last Name" required ng-model="p.lastName">
+                                           placeholder="Last Name" required ng-model="p.lastName" ng-disabled="p.disabledName">
                                 </div>
                                 <span class="tak-error-message" ng-show="vm.showErrors('lastName', $index)">
                                     Last Name is required
                                 </span>
                             </div>
                             <div class="col-lg-4 col-md-4 tak-input-div">
-                                <select class="contact-input" ng-model="p.going">
+                                <input class="contact-input" type="text" ng-disabled="p.disabledGoing" value="is going"
+                                       ng-if="p.disabledGoing"/>
+                                <select class="contact-input" ng-model="p.going" ng-if="!p.disabledGoing">
                                     <option value="1">
                                         is going
                                     </option>
