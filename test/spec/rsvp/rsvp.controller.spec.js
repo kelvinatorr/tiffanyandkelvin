@@ -120,5 +120,24 @@ describe('Controller: RSVPCtrl', function () {
         });
     });
 
+    describe('goingChanged', function() {
+       it('should not modify mainNotGoin person.plusOneDependent is false', function() {
+           var expected = false;
+           RSVPCtrl.mainNotGoing = expected;
+           RSVPCtrl.goingChanged({plusOneDependent: false});
+           expect(RSVPCtrl.mainNotGoing).toBe(expected);
+       });
+
+        it('should set mainNotGoing to person.going "0" === false or "1" === true', function () {
+            var expected = true;
+            var person = {
+                plusOneDependent: true,
+                going: '0'
+            };
+            RSVPCtrl.goingChanged(person);
+            expect(RSVPCtrl.mainNotGoing).toBe(true);
+        });
+    });
+
 
 });

@@ -24,6 +24,15 @@
 
         vm.showCloseButton = true;
 
+        vm.goingChanged = goingChanged;
+
+        vm.mainNotGoing = false;
+
+        function goingChanged(person) {
+            if(!person.plusOneDependent) return;
+            vm.mainNotGoing = person.going === '0';
+        }
+
         function showErrors(element, idx) {
             var key = element + idx;
             return vm.form[key].$dirty && vm.form[key].$invalid;
