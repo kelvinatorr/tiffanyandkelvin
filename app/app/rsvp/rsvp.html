@@ -11,32 +11,32 @@
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
                         <div class="row" ng-repeat-start="p in ::vm.formModel">
                             <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
-                                <div ng-class="{'field-error': vm.showErrors('firstName', $index), 'required-field': !p.disabledName}">
+                                <div ng-class="{'field-error': vm.showErrors('firstName', $index), 'required-field': p.plusOne}">
                                     <input name="firstName{{::$index}}" class="contact-input" type="text"
                                            placeholder="{{::p.plusOne ? '+1 First Name' : 'First Name'}}"
                                            ng-required="!vm.mainNotGoing && p.plusOne" ng-model="p.firstName"
-                                           ng-disabled="p.disabledName">
+                                           ng-disabled="!p.plusOne">
                                 </div>
                                 <span class="tak-error-message" ng-show="vm.showErrors('firstName', $index)">
                                     {{::p.plusOne ? '+1' : ''}} First Name is required
                                 </span>
                             </div>
                             <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
-                                <div ng-class="{'field-error': vm.showErrors('lastName', $index), 'required-field': !p.disabledName}">
+                                <div ng-class="{'field-error': vm.showErrors('lastName', $index), 'required-field': p.plusOne}">
                                     <input name="lastName{{::$index}}" class="contact-input" type="text"
                                            placeholder="{{::p.plusOne ? '+1 Last Name' : 'Last Name'}}"
                                            ng-required="!vm.mainNotGoing && p.plusOne" ng-model="p.lastName"
-                                           ng-disabled="p.disabledName">
+                                           ng-disabled="!p.plusOne">
                                 </div>
                                 <span class="tak-error-message" ng-show="vm.showErrors('lastName', $index)">
                                     {{::p.plusOne ? '+1' : ''}} Last Name is required
                                 </span>
                             </div>
                             <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
-                                <div ng-class="{'required-field': !p.disabledGoing}">
-                                    <input class="contact-input" type="text" ng-disabled="p.disabledGoing" value="is going"
-                                           ng-if="p.disabledGoing"/>
-                                    <select class="contact-input" ng-model="p.going" ng-if="!p.disabledGoing"
+                                <div ng-class="{'required-field': !p.plusOne}">
+                                    <input class="contact-input" type="text" ng-disabled="p.plusOne" value="is going"
+                                           ng-if="p.plusOne"/>
+                                    <select class="contact-input" ng-model="p.going" ng-if="!p.plusOne"
                                             ng-change="vm.goingChanged(p);">
                                         <option value="1">
                                             is going
