@@ -33,17 +33,19 @@
                                 </span>
                             </div>
                             <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
-                                <input class="contact-input" type="text" ng-disabled="p.disabledGoing" value="is going"
-                                       ng-if="p.disabledGoing"/>
-                                <select class="contact-input" ng-model="p.going" ng-if="!p.disabledGoing"
-                                    ng-change="vm.goingChanged(p);">
-                                    <option value="1">
-                                        is going
-                                    </option>
-                                    <option value="0">
-                                        is not going
-                                    </option>
-                                </select>
+                                <div ng-class="{'required-field': !p.disabledGoing}">
+                                    <input class="contact-input" type="text" ng-disabled="p.disabledGoing" value="is going"
+                                           ng-if="p.disabledGoing"/>
+                                    <select class="contact-input" ng-model="p.going" ng-if="!p.disabledGoing"
+                                            ng-change="vm.goingChanged(p);">
+                                        <option value="1">
+                                            is going
+                                        </option>
+                                        <option value="0">
+                                            is not going
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <hr class="hidden-lg hidden-md tak-margin-top-0" ng-repeat-end>
