@@ -1833,8 +1833,10 @@ a.menu-toggle span {
 
 /* Session Video Background*/
 .video-bg-section {
-	background: none !important;
-	background-color: #222 !important;
+	/*background: none !important;*/
+	/*background-color: #222 !important;*/
+	background: url(../images/video-poster.jpg) center center no-repeat !important; /*Video Poster fallback for mobile devices*/
+	background-size: cover !important;
 }
 
 .touch #hero.video-bg-section {

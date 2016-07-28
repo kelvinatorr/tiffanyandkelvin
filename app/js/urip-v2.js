@@ -8,19 +8,6 @@
 		$(document).ready(function(){
 			console.log('running urip!');
 
-			/* ====================================
-			 jQuery Youtube Player for Background
-			 =======================================*/
-			$(function(){
-				$(".call-video").YTPlayer();
-			});
-
-			var yPlayerfilters = {
-				opacity: 60,
-				grayscale: 50
-			};
-			jQuery('#ytplayer').YTPApplyFilters(yPlayerfilters);
-
 			/* =================
 			 Countdown Timer
 			 ====================*/
