@@ -203,26 +203,6 @@
 				time: 1000
 			});
 
-			/* =================================
-			 AjaxChimp JS
-			 (Integrate subscribe form w/ Mailchimp)
-			 ====================================*/
-			$('.the-subscribe-form').ajaxChimp({
-				callback: mailchimpCallback,
-				url: 'http://worksofwisnu.us6.list-manage.com/subscribe/post?u=b57b4e6ae38c92ac22d92a234&amp;id=17754c49aa'
-				// Replace the URL above with your mailchimp URL (put your URL inside '').
-			});
-
-			// callback function when the form submitted, show the notification box
-			function mailchimpCallback(resp) {
-				if (resp.result === 'success') {
-					$('#subscribe-success-notification').addClass('show-up');
-				}
-				else if (resp.result === 'error') {
-					$('#subscribe-error-notification').addClass('show-up');
-				}
-			}
-
 
 			/* =================================
 			 Add Custom Class to Open Toggle Panel
