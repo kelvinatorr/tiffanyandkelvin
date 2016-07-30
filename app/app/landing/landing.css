@@ -3,3 +3,11 @@
     color: #fff;
     margin-top: -5px;
 }
+
+.team-info {
+    height: 345px;
+}
+
+.team-info h6 {
+    font-size: 15px;
+}
