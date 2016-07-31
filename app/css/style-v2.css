@@ -1818,7 +1818,7 @@ a.menu-toggle span {
 .hero-subscribe-layout #hero,
 .creative-layout #hero,
 .event-layout #hero {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	background: url(../images/banners/footer.jpg) center center no-repeat;
 	background-attachment: fixed !important;
 	background-position: center top;
 }
@@ -3454,7 +3454,7 @@ ul.portfolio-list li.ext-link figure:focus img {
   */
 
 #subscribe-section {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	background: url(../images/banners/footer.jpg) center center no-repeat;
 	background-position: center bottom;
 }
 
@@ -3543,7 +3543,8 @@ ul.portfolio-list li.ext-link figure:focus img {
 
 /* 15.1 Footer Widget */
 #footer-widget-section {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	/*background: url(../images/banners/footer.jpg) center center no-repeat;*/
+	background-color: #222;
 	background-position: center bottom;
 }
 
@@ -3558,7 +3559,7 @@ ul.portfolio-list li.ext-link figure:focus img {
 }
 
 .widget ul.link-list a {
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .widget ul.link-list a:hover {
