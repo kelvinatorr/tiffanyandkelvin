@@ -11,7 +11,7 @@
 			/* =================
 			 Countdown Timer
 			 ====================*/
-			$('.countdown-timer').countdown('2015/11/21', function(event) { // DEFINE YOUR DATE HERE
+			$('.countdown-timer').countdown('2016/12/18', function(event) { // DEFINE YOUR DATE HERE
 				var $this = $(this).html(event.strftime(''
 					+ '<li><span class="time-number">%D</span> <span class="time-name">Days</span></li>'
 					+ '<li><span class="time-number">%H</span> <span class="time-name">Hours</span></li>'
