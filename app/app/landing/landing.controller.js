@@ -19,9 +19,11 @@
             var mapDiv = document.getElementById('googleMap');
             var map = new google.maps.Map(mapDiv, {
                 center: {lat: 36.115662, lng: -115.170364},
-                zoom: 12
+                zoom: 12,
+                scrollwheel: false
             });
             directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('right-panel'));
 
             directionsService.route({
                 origin: '3555 S Las Vegas Blvd, Las Vegas, NV 89109',
