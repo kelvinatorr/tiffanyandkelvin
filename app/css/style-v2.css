@@ -233,7 +233,7 @@ p.section-title:after {
 	margin-top: 17px;
 	width: 70px;
 	height: 1px;
-	background: #19a9e5;
+	background: #74c2bb;
 	content: "";
 }
 
@@ -252,13 +252,13 @@ b, strong {
 }
 
 a {
-	color: #19a9e5;
+	color: #74c2bb;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
 }
 
 a:hover {
-	color: #19a9e5;
+	color: #74c2bb;
 	text-decoration: none;
 }
 
@@ -284,7 +284,7 @@ a.more:after {
 	margin: 0;
 	width: 0%;
 	height: 1px;
-	background: #19a9e5;
+	background: #74c2bb;
 	color: transparent;
 	content: ".";
 	text-align: left;
@@ -312,7 +312,7 @@ a.more:hover:after {
   100% {
     width: 100%;
     height: 1px;
-    background: #19a9e5;
+    background: #74c2bb;
   }
 }
 
@@ -350,7 +350,7 @@ section.breaking {
 }
 
 .urip-blue-color {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .urip-orange-color {
@@ -595,18 +595,18 @@ body.overflow-hidden:before {
 }
 
 .cta-default {
-	background: #19a9e5;
+	background: #74c2bb;
 }
 
 .cta-stroke {
 	margin-top: 22px;
-	border: 2px solid #19a9e5;
+	border: 2px solid #74c2bb;
 	background-clip: padding-box;
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .cta-stroke:hover, .cta-stroke:focus {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .cta-default:after,
@@ -688,7 +688,7 @@ ul.checklist li:before {
 	top: 2px;
 	margin-right: 12px;
 	margin-left: -30px;
-	color: #19a9e5;
+	color: #74c2bb;
 	content: "\e116";
 	font-size: 17px;
 	font-family: "icomoon";
@@ -763,13 +763,13 @@ ul.checklist li:before {
 }
 
 .content-tab-wrapper .nav > li.active > a span[class^="icon-"] {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .content-tab-wrapper .nav-tabs > li.active:before {
 	margin-left: -11px;
 	border-width: 11px;
-	border-top-color: #19a9e5;
+	border-top-color: #74c2bb;
 }
 
 .content-tab-wrapper .nav-tabs > li.active:after {
@@ -835,7 +835,7 @@ ul.checklist li:before {
 }
 
 .section-tab .nav > li.active > a {
-	background: #19a9e5;
+	background: #74c2bb;
 	color: #fff;
 }
 
@@ -919,7 +919,7 @@ ul.checklist li:before {
 }
 
 .panel-heading.panel-active a {
-	background: #19a9e5;
+	background: #74c2bb;
 	color: #fff;
 }
 
@@ -1027,7 +1027,7 @@ ul.pricing .price.best-value {
 }
 
 ul.pricing .price:hover {
-	border-color: #19a9e5;
+	border-color: #74c2bb;
 }
 
 .price:hover .price-title {
@@ -1037,8 +1037,8 @@ ul.pricing .price:hover {
 .price:hover .price-amount {
 	margin-right: -20px;
 	margin-left: -20px;
-	border-color: #19a9e5;
-	background: #19a9e5;
+	border-color: #74c2bb;
+	background: #74c2bb;
 	color: #fff;
 }
 
@@ -1047,12 +1047,12 @@ ul.pricing .price:hover {
 }
 
 .price:hover .price-label {
-	background: #19a9e5;
+	background: #74c2bb;
 	color: #fff;
 }
 
 .price:hover .price-button {
-	background: #19a9e5;
+	background: #74c2bb;
 	color: #fff;
 }
 
@@ -1221,7 +1221,7 @@ a.overlay-close:hover {
 .contact-form .submit-btn {
 	min-width: 170px;
 	height: 50px;
-	background: #19a9e5;
+	background: #74c2bb;
 	text-transform: uppercase;
 	font-size: 20px;
 }
@@ -1263,7 +1263,7 @@ a.overlay-close:hover {
 	display: block;
 	width: 20px;
 	height: 20px;
-	background: #19a9e5;
+	background: #74c2bb;
 	content: "";
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1377,7 +1377,7 @@ a.overlay-close:hover {
 #success-notification,
 #subscribe-success-notification,
 #hero-success-notification {
-	background: #19a9e5;
+	background: #74c2bb;
 	color: rgba(250, 251, 255, 0.95);
 }
 
@@ -1493,7 +1493,7 @@ a.overlay-close:hover {
 }
 
 .blue-progress-bar {
-	background-color: #19a9e5;
+	background-color: #74c2bb;
 }
 
 .orange-progress-bar {
@@ -1532,7 +1532,7 @@ a.overlay-close:hover {
 }
 
 #to-top:hover {
-	background: #19a9e5;
+	background: #74c2bb;
 }
 
 /**
@@ -1747,7 +1747,7 @@ a.menu-toggle span {
 
 .header-clone .navbar-nav>li>a:hover,
 .header-clone .navbar-nav>li.current>a {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .navbar-header a.logo {
@@ -1818,7 +1818,7 @@ a.menu-toggle span {
 .hero-subscribe-layout #hero,
 .creative-layout #hero,
 .event-layout #hero {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	background: url(../images/banners/footer.jpg) center center no-repeat;
 	background-attachment: fixed !important;
 	background-position: center top;
 }
@@ -1833,8 +1833,10 @@ a.menu-toggle span {
 
 /* Session Video Background*/
 .video-bg-section {
-	background: none !important;
+	/*background: none !important;*/
 	background-color: #222 !important;
+	/*background: url(../images/video-poster.jpg) center center no-repeat !important; !*Video Poster fallback for mobile devices*!*/
+	background-size: cover !important;
 }
 
 .touch #hero.video-bg-section {
@@ -2556,7 +2558,7 @@ ul.how-it-works-col li:last-child:hover {
 }
 
 .the-feature:hover .feature-title {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .side-feature-icon span[class^="icon-"] {
@@ -2618,7 +2620,7 @@ ul.how-it-works-col li:last-child:hover {
   */
 
 #counter {
-	background: url(../images/stocks/stock4.jpg) center center no-repeat;
+	background: url(../images/banners/countdown.jpg) center center no-repeat;
 }
 
 #counter .breaking-content {
@@ -2789,11 +2791,11 @@ ul.countdown-timer li span.time-name {
 	display: inline-block;
 	margin-bottom: 30px;
 	padding: 17px;
-	border: 3px solid #19a9e5;
+	border: 3px solid #74c2bb;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	color: #19a9e5;
+	color: #74c2bb;
 	font-size: 70px;
 }
 
@@ -2949,7 +2951,7 @@ ul.filter li a:hover {
 }
 
 ul.filter li.current a {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 .mobile-filter-select {
@@ -2973,7 +2975,7 @@ ul.filter li.current a {
 }
 
 .mobile-filter-select.select-active {
-	background: #19a9e5;
+	background: #74c2bb;
 }
 
 .mobile-filter-select.select-active:hover {
@@ -3113,8 +3115,8 @@ ul.team-social li a {
 }
 
 .slick-dots li.slick-active button:before {
-	background: #19a9e5;
-	box-shadow: 0 0 0 4px #19a9e5;
+	background: #74c2bb;
+	box-shadow: 0 0 0 4px #74c2bb;
 }
 
 .phone-frame {
@@ -3267,7 +3269,7 @@ ul.customer-logos li:hover .customer-quote {
 }
 
 .app-layout .customer-quote .customer-link a {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 
@@ -3301,7 +3303,7 @@ ul.portfolio-filter li a:hover {
 
 ul.portfolio-filter li.current a {
 	display: block;
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 ul.portfolio-filter li a:after {
@@ -3452,7 +3454,7 @@ ul.portfolio-list li.ext-link figure:focus img {
   */
 
 #subscribe-section {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	background: url(../images/banners/footer.jpg) center center no-repeat;
 	background-position: center bottom;
 }
 
@@ -3541,7 +3543,8 @@ ul.portfolio-list li.ext-link figure:focus img {
 
 /* 15.1 Footer Widget */
 #footer-widget-section {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	/*background: url(../images/banners/footer.jpg) center center no-repeat;*/
+	background-color: #222;
 	background-position: center bottom;
 }
 
@@ -3556,11 +3559,11 @@ ul.portfolio-list li.ext-link figure:focus img {
 }
 
 .widget ul.link-list a {
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .widget ul.link-list a:hover {
-	color: #19a9e5;
+	color: #74c2bb;
 }
 
 ul.link-list li {
@@ -3572,7 +3575,7 @@ ul.link-list li:before {
     position: relative;
     margin-right: 5px;
     margin-left: -33px;
-    color: #19a9e5;
+    color: #74c2bb;
     content: "\e63a";
     vertical-align: middle;
     font-size: 22px;

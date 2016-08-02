@@ -8,23 +8,10 @@
 		$(document).ready(function(){
 			console.log('running urip!');
 
-			/* ====================================
-			 jQuery Youtube Player for Background
-			 =======================================*/
-			$(function(){
-				$(".call-video").YTPlayer();
-			});
-
-			var yPlayerfilters = {
-				opacity: 60,
-				grayscale: 50
-			};
-			jQuery('#ytplayer').YTPApplyFilters(yPlayerfilters);
-
 			/* =================
 			 Countdown Timer
 			 ====================*/
-			$('.countdown-timer').countdown('2015/11/21', function(event) { // DEFINE YOUR DATE HERE
+			$('.countdown-timer').countdown('2016/12/18', function(event) { // DEFINE YOUR DATE HERE
 				var $this = $(this).html(event.strftime(''
 					+ '<li><span class="time-number">%D</span> <span class="time-name">Days</span></li>'
 					+ '<li><span class="time-number">%H</span> <span class="time-name">Hours</span></li>'
@@ -216,26 +203,6 @@
 				time: 1000
 			});
 
-			/* =================================
-			 AjaxChimp JS
-			 (Integrate subscribe form w/ Mailchimp)
-			 ====================================*/
-			$('.the-subscribe-form').ajaxChimp({
-				callback: mailchimpCallback,
-				url: 'http://worksofwisnu.us6.list-manage.com/subscribe/post?u=b57b4e6ae38c92ac22d92a234&amp;id=17754c49aa'
-				// Replace the URL above with your mailchimp URL (put your URL inside '').
-			});
-
-			// callback function when the form submitted, show the notification box
-			function mailchimpCallback(resp) {
-				if (resp.result === 'success') {
-					$('#subscribe-success-notification').addClass('show-up');
-				}
-				else if (resp.result === 'error') {
-					$('#subscribe-error-notification').addClass('show-up');
-				}
-			}
-
 
 			/* =================================
 			 Add Custom Class to Open Toggle Panel
@@ -376,115 +343,115 @@
 			/* ==================================
 			 Contact Form Validation
 			 =====================================*/
-			$('#submit').click(function(e){
-
-				// Stop form submission & check the validation
-				e.preventDefault();
-
-				// Variable declaration
-				var error = false;
-				var fname = $('#fname').val();
-				var email = $('#email').val();
-				var subject = $('#subject').val();
-				var message = $('#message').val();
-
-				// Form field validation
-				if(fname.length == 0){
-					var error = true;
-					$('#fname').parent('div').addClass('field-error');
-				}else{
-					$('#fname').parent('div').removeClass('field-error');
-				}
-				if(email.length == 0 || email.indexOf('@') == '-1'){
-					var error = true;
-					$('#email').parent('div').addClass('field-error');
-				}else{
-					$('#email').parent('div').removeClass('field-error');
-				}
-				if(subject.length == 0){
-					var error = true;
-					$('#subject').parent('div').addClass('field-error');
-				}else{
-					$('#subject').parent('div').removeClass('field-error');
-				}
-				if(message.length == 0){
-					var error = true;
-					$('#message').parent('div').addClass('field-error');
-				}else{
-					$('#message').parent('div').removeClass('field-error');
-				}
-
-				if(error == true){
-					$('#error-notification').addClass('show-up');
-				}else{
-					$('#error-notification').removeClass('show-up');
-				}
-
-				if(error == false){
-					$.post("contact.php", $("#contact-form").serialize(),function(result){
-						if(result == 'sent'){
-							$('#success-notification').addClass('show-up');
-							$('.submit-btn').addClass('disabled');
-						}
-					});
-				}
-			});
+			//$('#submit').click(function(e){
+            //
+			//	// Stop form submission & check the validation
+			//	e.preventDefault();
+            //
+			//	// Variable declaration
+			//	var error = false;
+			//	var fname = $('#fname').val();
+			//	var email = $('#email').val();
+			//	var subject = $('#subject').val();
+			//	var message = $('#message').val();
+            //
+			//	// Form field validation
+			//	if(fname.length == 0){
+			//		var error = true;
+			//		$('#fname').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#fname').parent('div').removeClass('field-error');
+			//	}
+			//	if(email.length == 0 || email.indexOf('@') == '-1'){
+			//		var error = true;
+			//		$('#email').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#email').parent('div').removeClass('field-error');
+			//	}
+			//	if(subject.length == 0){
+			//		var error = true;
+			//		$('#subject').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#subject').parent('div').removeClass('field-error');
+			//	}
+			//	if(message.length == 0){
+			//		var error = true;
+			//		$('#message').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#message').parent('div').removeClass('field-error');
+			//	}
+            //
+			//	if(error == true){
+			//		$('#error-notification').addClass('show-up');
+			//	}else{
+			//		$('#error-notification').removeClass('show-up');
+			//	}
+            //
+			//	if(error == false){
+			//		$.post("contact.php", $("#contact-form").serialize(),function(result){
+			//			if(result == 'sent'){
+			//				$('#success-notification').addClass('show-up');
+			//				$('.submit-btn').addClass('disabled');
+			//			}
+			//		});
+			//	}
+			//});
 
 			/* ==================================
 			 Hero Form Validation
 			 =====================================*/
-			$('#hero-submit').click(function(e){
-
-				// Stop form submission & check the validation
-				e.preventDefault();
-
-				// Variable declaration
-				var error = false;
-				var fname = $('#hero-fname').val();
-				var email = $('#hero-email').val();
-				var username = $('#hero-username').val();
-
-				// Form field validation
-				if(fname.length == 0){
-					var error = true;
-					$('#hero-fname').parent('div').addClass('field-error');
-				}else{
-					$('#hero-fname').parent('div').removeClass('field-error');
-				}
-				if(email.length == 0 || email.indexOf('@') == '-1'){
-					var error = true;
-					$('#hero-email').parent('div').addClass('field-error');
-				}else{
-					$('#hero-email').parent('div').removeClass('field-error');
-				}
-				if(username.length == 0){
-					var error = true;
-					$('#hero-username').parent('div').addClass('field-error');
-				}else{
-					$('#hero-username').parent('div').removeClass('field-error');
-				}
-
-				if(error == true){
-					$('#hero-error-notification').addClass('show-up');
-				}else{
-					$('#hero-error-notification').removeClass('show-up');
-				}
-
-				if(error == false){
-					$.post("hero-form.php", $("#register-form").serialize(),function(result){
-						if(result == 'sent'){
-							$('#hero-success-notification').addClass('show-up');
-							$('#hero-submit').addClass('disabled');
-						}
-					});
-				}
-			});
+			//$('#hero-submit').click(function(e){
+            //
+			//	// Stop form submission & check the validation
+			//	e.preventDefault();
+            //
+			//	// Variable declaration
+			//	var error = false;
+			//	var fname = $('#hero-fname').val();
+			//	var email = $('#hero-email').val();
+			//	var username = $('#hero-username').val();
+            //
+			//	// Form field validation
+			//	if(fname.length == 0){
+			//		var error = true;
+			//		$('#hero-fname').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#hero-fname').parent('div').removeClass('field-error');
+			//	}
+			//	if(email.length == 0 || email.indexOf('@') == '-1'){
+			//		var error = true;
+			//		$('#hero-email').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#hero-email').parent('div').removeClass('field-error');
+			//	}
+			//	if(username.length == 0){
+			//		var error = true;
+			//		$('#hero-username').parent('div').addClass('field-error');
+			//	}else{
+			//		$('#hero-username').parent('div').removeClass('field-error');
+			//	}
+            //
+			//	if(error == true){
+			//		$('#hero-error-notification').addClass('show-up');
+			//	}else{
+			//		$('#hero-error-notification').removeClass('show-up');
+			//	}
+            //
+			//	if(error == false){
+			//		$.post("hero-form.php", $("#register-form").serialize(),function(result){
+			//			if(result == 'sent'){
+			//				$('#hero-success-notification').addClass('show-up');
+			//				$('#hero-submit').addClass('disabled');
+			//			}
+			//		});
+			//	}
+			//});
 
 
 			// Function to close the Notification
-			$('a.notification-close').click(function(){
-				$(this).parent('div').fadeOut(200);
-			});
+			//$('a.notification-close').click(function(){
+			//	$(this).parent('div').fadeOut(200);
+			//});
 
 
 			/* ==========================

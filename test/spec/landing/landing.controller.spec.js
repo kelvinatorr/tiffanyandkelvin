@@ -28,4 +28,8 @@ describe('Controller: LandingCtrl', function () {
         rootScope.$broadcast('$viewContentLoaded');
         expect(window.tak.runUripV2).toHaveBeenCalled();
     });
+
+    it('should initialize mapsApiFailed to false', function() {
+        expect(LandingCtrl.mapsApiFailed).toBe(false);
+    });
 });
