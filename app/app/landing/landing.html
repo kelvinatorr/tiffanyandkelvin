@@ -213,14 +213,10 @@
 
                 <div class="clearfix"></div>
 
-                <div class="browser-mockup-wrapper" data-sr="enter bottom over 1s and move 80px wait 0.3s">
+                <div class="browser-mockup-wrapper">
 
-                    <!--
-                                                <a href="https://www.youtube.com/watch?v=Hhk4N9A0oCA" class="swipebox-video play-btn animated pulse"><span class="icon-play2"></span></a>
-                                                <img class="margin-top-40" src="images/mockup/browser.png" alt="Browser Mockup" />
-                    -->
-
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1O9YLu2vN-qfLlEJTO6gsjSN5FYI" width="640" height="480"></iframe>
+                    <div ng-if="!vm.mapsApiFailed" id="googleMap"></div>
+                    <iframe ng-if="vm.mapsApiFailed" src="https://www.google.com/maps/d/embed?mid=1O9YLu2vN-qfLlEJTO6gsjSN5FYI" width="640" height="480"></iframe>
 
                 </div> <!--/ .browser-mockup-wrapper -->
 
@@ -228,6 +224,7 @@
         </div> <!--/ .container -->
 
     </section>
+    <br>
     <!--
     =============================
     ==/ END INTRODUCTION SECTION ==
