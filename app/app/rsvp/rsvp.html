@@ -9,7 +9,7 @@
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <form class="contact-form" id="contact-form" name="vm.form" novalidate
                           ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
-                        <div class="row" ng-repeat-start="p in ::vm.formModel">
+                        <div class="row" ng-repeat-start="(key, p) in ::vm.formModel | respondedFilter">
                             <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
                                 <div ng-class="{'field-error': vm.showErrors('firstName', $index), 'required-field': p.plusOne}">
                                     <input name="firstName{{::$index}}" class="contact-input" type="text"
@@ -66,7 +66,7 @@
 <div id="success-notification" class="notif-box">
     <span class="icon-checkmark notif-icon"></span>
     <p>Thank you for your response.</p>
-    <a class="notification-close" ng-click="vm.closeToast('success')">Close</a>
+    <a class="notification-close" ui-sref="landing">Close</a>
 </div>
 <div id="error-notification" class="notif-box">
     <span class="icon-bullhorn notif-icon"></span>

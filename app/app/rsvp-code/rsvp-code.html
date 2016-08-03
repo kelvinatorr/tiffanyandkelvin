@@ -15,7 +15,7 @@
                                      ng-class="{'field-error': vm.form.code.$invalid && vm.form.code.$dirty}">
                                     <input name="code" class="contact-input" type="text"
                                            placeholder="RSVP Code" required ng-model="vm.formModel.code" autofocus
-                                            ng-change="vm.codeWatcher(vm.formModel.code);">
+                                            ng-change="vm.codeWatcher(vm.formModel.code);" input-uppercase>
                                 </div>
                                 <span class="tak-error-message" ng-if="vm.form.code.$dirty && vm.form.code.$invalid">
                                     A code is required
