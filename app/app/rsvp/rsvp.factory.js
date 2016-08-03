@@ -33,6 +33,7 @@
 
         function save(newData) {
             var self = this;
+            newData.responded = true;
             return $q(function(resolve, reject) {
                 FirebaseFactory.database.ref('codes/' + self.key).set(newData).then(resolve).catch(reject);
             });

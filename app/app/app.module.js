@@ -37,7 +37,6 @@
                 controllerAs: 'vm',
                 resolve: {
                     rsvpData: ['RSVPFactory', '$stateParams', function (RSVPFactory, $stateParams) {
-                        console.log(RSVPFactory.key);
                         if($stateParams.code === RSVPFactory.key) {
                             return RSVPFactory;
                         } else {
