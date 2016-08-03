@@ -2,7 +2,9 @@
   "name": "tiffanyandkelvin",
   "version": "0.1.0",
   "scripts": {
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "test": "karma start ./test/karma-conf.js"
+
   },
   "license": "ISC",
   "dependencies": {},
