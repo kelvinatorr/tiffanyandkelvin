@@ -28,8 +28,10 @@
 		<link rel="stylesheet" href="css/style-v2.css">
 		<link rel="stylesheet" href="css/style-responsive-v2.css">
 
+		<!-- build:css css/app.css -->
 		<link rel="stylesheet" href="app/rsvp-code/rsvp-code.css">
 		<link rel="stylesheet" href="app/landing/landing.css">
+		<!-- endbuild -->
 
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -123,7 +125,7 @@
 		<script src="js/urip-v2.js"></script>
 
 		<!--firebase-->
-		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 		<script>
 			// Initialize Firebase
 			var config = {
@@ -140,7 +142,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
 
-		<!--app-->
+		<!-- build:js app/app.js -->
 		<script src="app/app.module.js"></script>
 		<script src="app/landing/landing.controller.js"></script>
 		<script src="app/rsvp-code/rsvp-code.controller.js"></script>
@@ -150,6 +152,7 @@
 		<script src="app/landing/google-map-init.factory.js"></script>
 		<script src="app/rsvp-code/input-uppercase.directive.js"></script>
 		<script src="app/rsvp/responded.filter.js"></script>
+		<!-- endbuild -->
 
 	</body>
 </html>
