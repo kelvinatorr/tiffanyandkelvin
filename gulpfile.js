@@ -12,7 +12,7 @@ var gulpif = require('gulp-if');
 var revReplace = require('gulp-rev-replace');
 var useref = require('gulp-useref');
 var rev = require('gulp-rev');
-
+var htmlmin = require('gulp-htmlmin');
 
 // delete everything in the www folder
 gulp.task('clean-dist', function () {
@@ -55,6 +55,7 @@ gulp.task('copy-files', function() {
         .pipe(gulp.dest('dist/js'));
 
     var templates = gulp.src('app/app/**/*.html')
+        .pipe(htmlmin({removeComments: true, collapseWhitespace: true, conservativeCollapse: true}))
         .pipe(gulp.dest('dist/app'));
 
     return merge(imgs, css, preMinifiedCss,preMinifiedJS,jsFiles,templates, fonts);
@@ -73,8 +74,6 @@ gulp.task('build-html', function () {
         return filesToRev[file.basename];
     };
 
-    // TODO use template cache
-
     // concatenate, annotate, minify our vendor js files
     // concatenate, annotate, minify our js files
     return gulp.src("app/index.html")
@@ -84,6 +83,7 @@ gulp.task('build-html', function () {
         .pipe(gulpif('css/*.css', minifyCss())) // Minify vendor CSS sources
         .pipe(gulpif(condition, rev()))                // Rename the concatenated files
         .pipe(revReplace())         // Substitute in new filenames
+        .pipe(htmlmin({removeComments: true}))
         .pipe(gulp.dest('dist'));
 });
 
