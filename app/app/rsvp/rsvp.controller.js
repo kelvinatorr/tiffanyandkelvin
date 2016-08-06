@@ -27,6 +27,11 @@
         vm.goingChanged = goingChanged;
 
         vm.mainNotGoing = false;
+        angular.forEach(vm.formModel, function(val, key) {
+            if(key !== 'responded') {
+                vm.goingChanged(val);
+            }
+        });
 
         function goingChanged(person) {
             if(!person.plusOneDependent) return;
