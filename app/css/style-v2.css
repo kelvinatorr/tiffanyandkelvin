@@ -2385,110 +2385,136 @@ a.scroll-link:hover {
 
 ul.how-it-works-col li {
 	float: left;
-	padding: 120px 0 100px;
+	padding: 100px 26px 80px 26px;
+	/*min-height: 427px;*/
 }
 
-.how-it-works-title img {
-	margin-bottom: 30px;
-}
+/*.how-it-works-title img {*/
+	/*margin-bottom: 30px;*/
+/*}*/
 
-.how-it-works-title h4 {
-	margin-bottom: 10px;
-}
+/*.how-it-works-title h4 {*/
+	/*margin-bottom: 10px;*/
+/*}*/
 
-.how-it-works-info {
-	position: absolute;
-	top: 0;
-	visibility: hidden;
-	padding: 113px 8%;
-	height: 100%;
-	background: rgba(34, 34, 34, 0.7);
-}
+/*.how-it-works-info {*/
+	/*position: absolute;*/
+	/*!*top: 0;*!*/
+	/*!*visibility: hidden;*!*/
+	/*padding: 113px 8%;*/
+	/*height: 100%;*/
+	/*background: rgba(34, 34, 34, 0.7);*/
+/*}*/
 
 .how-it-works-info,
 .how-it-works-info h4,
 .how-it-works-info p,
 .how-it-works-info p strong {
-	color: #fff;
+	color: #333;
 }
 
 .how-it-works-info h4 {
 	margin-bottom: 26px;
 }
 
-ul.how-it-works-col li:first-child .how-it-works-info:after,
-ul.how-it-works-col li:nth-child(2) .how-it-works-info:after {
-	display: block;
-	margin-top: 32px;
-	width: 100%;
-	height: 50px;
-	background: url(../images/arrow.png) no-repeat right;
-	content: "";
-}
+/*ul.how-it-works-col li:first-child .how-it-works-info:after,*/
+/*ul.how-it-works-col li:nth-child(2) .how-it-works-info:after {*/
+	/*display: block;*/
+	/*margin-top: 32px;*/
+	/*width: 100%;*/
+	/*height: 50px;*/
+	/*background: url(../images/arrow.png) no-repeat right;*/
+	/*content: "";*/
+/*}*/
 
-.how-it-works-info .cta {
-	margin-top: 7px;
-	-webkit-transition: none;
-	transition: none;
-}
+/*.how-it-works-info .cta {*/
+	/*margin-top: 7px;*/
+	/*-webkit-transition: none;*/
+	/*transition: none;*/
+/*}*/
 
-ul.how-it-works-col li:hover .how-it-works-title {
-	opacity: 0;
-}
+/*ul.how-it-works-col li:hover .how-it-works-title {*/
+	/*opacity: 0;*/
+/*}*/
 
-ul.how-it-works-col li:hover .how-it-works-info {
-	visibility: visible;
-}
+/*ul.how-it-works-col li:hover .how-it-works-info {*/
+	/*visibility: visible;*/
+/*}*/
 
 /* 6.1 How It Works info hover transitions/animations */
-.how-it-works-info p,
-.how-it-works-info p strong {
-	-webkit-transform: translateY(30%);
-	-ms-transform: translateY(30%);
-	transform: translateY(30%);
-}
+/*.how-it-works-info p,*/
+/*.how-it-works-info p strong {*/
+	/*-webkit-transform: translateY(30%);*/
+	/*-ms-transform: translateY(30%);*/
+	/*transform: translateY(30%);*/
+/*}*/
 
-.how-it-works-info h4,
-.how-it-works-info .cta,
-ul.how-it-works-col li:first-child .how-it-works-info:after,
-ul.how-it-works-col li:nth-child(2) .how-it-works-info:after {
-	-webkit-transform: translateY(60%);
-	-ms-transform: translateY(60%);
-	transform: translateY(60%);
-}
+/*.how-it-works-info h4,*/
+/*.how-it-works-info .cta,*/
+/*ul.how-it-works-col li:first-child .how-it-works-info:after,*/
+/*ul.how-it-works-col li:nth-child(2) .how-it-works-info:after {*/
+	/*-webkit-transform: translateY(60%);*/
+	/*-ms-transform: translateY(60%);*/
+	/*transform: translateY(60%);*/
+/*}*/
 
-ul.how-it-works-col li:hover .how-it-works-info h4,
-ul.how-it-works-col li:hover .how-it-works-info p,
-ul.how-it-works-col li:hover .how-it-works-info p strong {
-	-webkit-transition: all 0.27s ease-in-out;
-	transition: all 0.27s ease-in-out;
-	-webkit-transform: translateY(0%);
-	-ms-transform: translateY(0%);
-	transform: translateY(0%);
-}
+/*ul.how-it-works-col li:hover .how-it-works-info h4,*/
+/*ul.how-it-works-col li:hover .how-it-works-info p,*/
+/*ul.how-it-works-col li:hover .how-it-works-info p strong {*/
+	/*-webkit-transition: all 0.27s ease-in-out;*/
+	/*transition: all 0.27s ease-in-out;*/
+	/*-webkit-transform: translateY(0%);*/
+	/*-ms-transform: translateY(0%);*/
+	/*transform: translateY(0%);*/
+/*}*/
 
-ul.how-it-works-col li:hover .how-it-works-info .cta,
-ul.how-it-works-col li:hover:first-child .how-it-works-info:after,
-ul.how-it-works-col li:hover:nth-child(2) .how-it-works-info:after {
-	-webkit-transition: all 0.32s ease-in-out;
-	transition: all 0.32s ease-in-out;
-	-webkit-transform: translateY(0%);
-	-ms-transform: translateY(0%);
-	transform: translateY(0%);
-}
+/*ul.how-it-works-col li:hover .how-it-works-info .cta,*/
+/*ul.how-it-works-col li:hover:first-child .how-it-works-info:after,*/
+/*ul.how-it-works-col li:hover:nth-child(2) .how-it-works-info:after {*/
+	/*-webkit-transition: all 0.32s ease-in-out;*/
+	/*transition: all 0.32s ease-in-out;*/
+	/*-webkit-transform: translateY(0%);*/
+	/*-ms-transform: translateY(0%);*/
+	/*transform: translateY(0%);*/
+/*}*/
 /* -- */
 
 /* 6.2 How It Works hover background */
 ul.how-it-works-col li:first-child:hover {
-	background: url(../images/stocks/stock1.jpg) no-repeat center center;
+	/*background: url(../images/stocks/stock1.jpg) no-repeat center center;*/
+	background: url(../../images/our-story/howwemet.jpg) no-repeat center center;
+
+}
+
+ul.how-it-works-col li:first-child:hover .how-it-works-info,
+ul.how-it-works-col li:first-child:hover .how-it-works-info h4,
+ul.how-it-works-col li:first-child:hover .how-it-works-info p,
+ul.how-it-works-col li:first-child:hover .how-it-works-info p strong {
+	color: #fff;
 }
 
 ul.how-it-works-col li:nth-child(2):hover {
-	background: url(../images/stocks/stock2.jpg) no-repeat center center;
+	background: url(../../images/our-story/theproposal.jpg) no-repeat center center;
+
+}
+
+ul.how-it-works-col li:nth-child(2):hover .how-it-works-info,
+ul.how-it-works-col li:nth-child(2):hover .how-it-works-info h4,
+ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p,
+ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p strong {
+	color: #fff;
 }
 
 ul.how-it-works-col li:last-child:hover {
-	background: url(../images/stocks/stock3.jpg) no-repeat center center;
+	background: url(../../images/our-story/thewedding.jpg) no-repeat center center;
+
+}
+
+ul.how-it-works-col li:last-child:hover .how-it-works-info,
+ul.how-it-works-col li:last-child:hover .how-it-works-info h4,
+ul.how-it-works-col li:last-child:hover .how-it-works-info p,
+ul.how-it-works-col li:last-child:hover .how-it-works-info p strong {
+	color: #fff;
 }
 
 /**
