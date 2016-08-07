@@ -28,3 +28,18 @@
 #schedule {
     padding-bottom: 0;
 }
+
+
+@media(max-width: 738px) {
+    ul.customer-logos li.engagement-vertical {
+        height: 274px;
+    }
+
+    ul.customer-logos li.engagement-horizontal {
+        height: 192px;
+    }
+
+    .customer-logo {
+        padding: 0 8px;
+    }
+}
