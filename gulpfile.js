@@ -87,6 +87,15 @@ gulp.task('build-html', function () {
         .pipe(gulp.dest('dist'));
 });
 
+var imagemin = require('gulp-imagemin');
+
+gulp.task('image-min', function() {
+    return gulp.src('app/images/thumbnail-strip/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'));
+});
+
+
 
 gulp.task('build', function(callback) {
     runSequence('clean-dist',
