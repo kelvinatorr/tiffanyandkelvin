@@ -2235,7 +2235,7 @@ a.scroll-link:hover {
 }
 
 .event-hero-info small span {
-	color: #f6a006;
+	color: #d3d3d3;
 	margin-right: 20px;
 }
 
@@ -2882,7 +2882,7 @@ ul.countdown-timer li span.time-name {
 .session-meta > .session-meta-info > .session-info-time > span {
 	font-size: 18px;
     margin-right: 12px;
-    color: #f6a006;
+    color: #d3d3d3;
 }
 
 .session-meta > .session-meta-info > .session-info-place {
@@ -2892,7 +2892,7 @@ ul.countdown-timer li span.time-name {
 .session-meta > .session-meta-info > .session-info-place > span {
 	font-size: 17px;
     margin-right: 13px;
-    color: #f6a006;
+    color: #d3d3d3;
 }
 
 .session-description {
@@ -2932,7 +2932,7 @@ h4.session-title {
 .session-break .session-break-time {
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
-    color: #f6a006;
+    color: #939393;
 }
 
 .session-break .session-break-time span {
