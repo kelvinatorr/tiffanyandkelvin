@@ -24,3 +24,7 @@
 #googleMap {
     height: 500px;
 }
+
+#schedule {
+    padding-bottom: 0;
+}
