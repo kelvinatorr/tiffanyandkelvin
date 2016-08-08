@@ -1,0 +1,86 @@
+.navbar-header a.tak-navbar-brand.logo {
+    height: auto;
+    color: #fff;
+    margin-top: -5px;
+}
+
+.team-info {
+    height: 345px;
+}
+
+
+#counter {
+    background: url(../../images/banners/countdown.jpg) center center no-repeat;
+}
+@media (max-width: 768px) {
+    .team-info {
+        height: 455px;
+    }
+
+    #counter {
+        background: url(../../images/banners/countdown-mobile.jpg) center center no-repeat;
+    }
+}
+
+
+
+.team-info h6 {
+    font-size: 15px;
+}
+
+.tak-thanks-list-item {
+    margin-bottom: 0;
+}
+
+#hero small {
+    font-family: "Varela Round", sans-serif;
+
+}
+
+#googleMap {
+    height: 500px;
+}
+
+#schedule {
+    padding-bottom: 0;
+}
+
+
+@media(max-width: 738px) {
+    ul.customer-logos li.engagement-vertical {
+        height: 274px;
+    }
+
+    ul.customer-logos li.engagement-horizontal {
+        height: 192px;
+    }
+
+    .customer-logo {
+        padding: 0 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    ul.how-it-works-col li:first-child:hover .how-it-works-info,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info h4,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info p,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info p strong {
+        color: #fff;
+    }
+
+
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info h4,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p strong {
+        color: #fff;
+    }
+
+
+    ul.how-it-works-col li:last-child:hover .how-it-works-info,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info h4,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info p,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info p strong {
+        color: #fff;
+    }
+}

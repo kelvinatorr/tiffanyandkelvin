@@ -1,0 +1,84 @@
+<div class="contact-overlay">
+    <a class="overlay-close" ui-sref="landing" ng-if="vm.showCloseButton"></a>
+    <div class="container">
+        <div class="row">
+            <div class="contact-content col-lg-10 col-lg-offset-1 centered">
+                <h2 class="all-caps"> Répondez s'il vous plaît </h2>
+                <p>Enter your information below</p>
+                <!-- BEGIN Contact Form -->
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <form class="contact-form" id="contact-form" name="vm.form" novalidate
+                          ng-submit="vm.form.$valid && vm.submit(vm.formModel)">
+                        <div class="row" ng-repeat-start="(key, p) in ::vm.formModel | respondedFilter">
+                            <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
+                                <div ng-class="{'field-error': vm.showErrors('firstName', $index), 'required-field': p.plusOne && p.going === '1'}">
+                                    <input name="firstName{{::$index}}" class="contact-input" type="text"
+                                           placeholder="{{::p.plusOne ? '+1 First Name' : 'First Name'}}"
+                                           ng-required="(!vm.mainNotGoing && p.plusOne && p.going === '1')" ng-model="p.firstName"
+                                           ng-disabled="!p.plusOne || vm.isSaving">
+                                </div>
+                                <span class="tak-error-message" ng-show="vm.showErrors('firstName', $index)">
+                                    {{::p.plusOne ? '+1' : ''}} First Name is required
+                                </span>
+                            </div>
+                            <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
+                                <div ng-class="{'field-error': vm.showErrors('lastName', $index), 'required-field': p.plusOne && p.going === '1'}">
+                                    <input name="lastName{{::$index}}" class="contact-input" type="text"
+                                           placeholder="{{::p.plusOne ? '+1 Last Name' : 'Last Name'}}"
+                                           ng-required="(!vm.mainNotGoing && p.plusOne && p.going === '1')" ng-model="p.lastName"
+                                           ng-disabled="!p.plusOne || vm.isSaving">
+                                </div>
+                                <span class="tak-error-message" ng-show="vm.showErrors('lastName', $index)">
+                                    {{::p.plusOne ? '+1' : ''}} Last Name is required
+                                </span>
+                            </div>
+                            <div class="col-lg-4 col-md-4 tak-input-div" ng-hide="vm.mainNotGoing && p.plusOne">
+                                <div class="required-field">
+                                    <!--<input class="contact-input" type="text" ng-disabled="p.plusOne" value="is going"-->
+                                           <!--ng-if="p.plusOne"/>-->
+                                    <select class="contact-input" ng-model="p.going"
+                                            ng-change="vm.goingChanged(p);" ng-disabled="vm.isSaving">
+                                        <option value="1">
+                                            is going
+                                        </option>
+                                        <option value="0">
+                                            is not going
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hidden-lg hidden-md tak-margin-top-0" ng-repeat-end>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 all-caps centered">
+                                <button type="submit" class="submit-button" ng-disabled="vm.form.$invalid || vm.isSaving">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" ng-if="vm.showThankYou && !vm.form.$dirty" style="margin-top: 13px;">
+                            <div class="col-lg-12 centered">
+                                <h4 style="color: #fff;">Thank you for your response.</h4>
+                                <a role="button" style="margin-bottom: 0;" ng-if="vm.atLeastOneGoing && !vm.form.$dirty"
+                                   ng-click="vm.authCalendar()">
+                                    Would you like to add our wedding to your Google Calendar?
+                                </a>
+                            </div>
+                        </div>
+                    </form> <!--/ .contact-form -->
+                </div> <!--/ .col-lg-6 -->
+                <!--/ END Contact Form -->
+            </div> <!--/ .contact-content -->
+        </div> <!--/ .row -->
+    </div> <!--/ .container -->
+</div> <!--/ .contact-overlay -->
+<div id="success-notification" class="notif-box">
+    <span class="icon-checkmark notif-icon"></span>
+    <p>Thank you for your response.</p>
+    <a class="notification-close" ui-sref="landing">Close</a>
+</div>
+<div id="error-notification" class="notif-box">
+    <span class="icon-bullhorn notif-icon"></span>
+    <p>There was a problem saving your response. Please try again.</p>
+    <a class="notification-close" ng-click="vm.closeToast('error')">Close</a>
+</div>

@@ -1,0 +1,111 @@
+/* Meta */
+.entry-meta li:after,
+.blog-meta li:after  {
+	right: auto;
+	left: -12px;
+}
+
+.entry-meta li:first-child,
+.blog-meta li:first-child {
+	padding-right: 0;
+	padding-left: 15px;
+}
+
+.entry-meta li:last-child,
+.blog-meta li:last-child {
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+/* Blockquote */
+blockquote {
+	padding-left: 0;
+	padding-right: 8.33333333%;
+}
+
+blockquote:before {
+	left: auto;
+	right: 22px;
+}
+
+.post-with-sidebar blockquote:before {
+	left: auto;
+	right: 11px;
+}
+
+/* Comments */
+.comment-avatar {
+	float: right;
+}
+
+.comment-content {
+	margin-left: 0;
+	margin-right: 100px;
+}
+
+.comment-name {
+	padding-right: 0;
+	padding-left: 15px;
+}
+
+.comment-name a {
+	white-space: nowrap;
+}
+
+.comment-name:after,
+.comment-date:after {
+	right: auto;
+	left: -12px;
+}
+
+.comment-child {
+	padding-left: 0;
+	padding-right: 100px;
+}
+
+/* == Sidebar == */
+/* Search Widget */
+.search-form-wrapper {
+	position: relative;
+}
+
+.search-form .search-field {
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+
+.search-form .search-submit {
+	margin-right: 0;
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+}
+
+/* Recent Post Widget */
+.widget-recent-post .recent-post-list .recent-item .recent-thumbnail {
+	float: right;
+	margin-right: 0;
+	margin-left: 15px;
+}
+
+/* Tags Widget */
+.tagcloud {
+
+}
+
+.widget-tagcloud .tagcloud a {
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+
+@media (max-width: 800px) {
+	blockquote:before {
+		right: 0;
+	}
+
+	.comment-child {
+		padding-right: 0;
+	}
+}
