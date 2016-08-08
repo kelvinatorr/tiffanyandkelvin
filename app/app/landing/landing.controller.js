@@ -6,6 +6,24 @@
     function LandingCtrl($scope, GoogleMapInit, $timeout) {
         var vm = this;
 
+        var fixOurStory = function() {
+            var listItems = $('.how-it-works-li');
+            var maxHeight = undefined;
+            listItems.each(function() {
+                var currentItem = $(this);
+                if(!maxHeight ||currentItem.outerHeight() > maxHeight) {
+                    maxHeight = currentItem.outerHeight();
+                }
+            });
+
+            listItems.each(function() {
+                var currentItem = $(this);
+                if(currentItem.outerHeight() !== maxHeight) {
+                    currentItem.css('min-height', maxHeight + 'px');
+                }
+            });
+        };
+
         vm.mapsApiFailed = false;
 
         $scope.$on('$viewContentLoaded', function() {
@@ -39,6 +57,10 @@
                     });
                 });
             });
+
+            fixOurStory();
         });
+
+        $(window).resize(fixOurStory);
     }
 })(angular, window);

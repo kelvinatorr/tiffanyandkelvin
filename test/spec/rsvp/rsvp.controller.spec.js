@@ -82,19 +82,70 @@ describe('Controller: RSVPCtrl', function () {
             code: 'foo'
         };
 
+        var mockForm = {
+            $setPristine: function() {}
+        };
+
         beforeEach(function() {
+            RSVPCtrl.form = mockForm;
             RSVPCtrl.submit(formModel);
             spyOn($.fn, 'addClass');
+            spyOn(mockForm, '$setPristine');
         });
 
         it('should call save on rsvpData', function() {
            expect(rsvpData.save).toHaveBeenCalledWith(formModel);
         });
 
-        it('should call add class with show-up when successful', function() {
+        it('should set showThankYou to be true when successful', function() {
             deferred.resolve();
             scope.$apply();
-            expect($.fn.addClass).toHaveBeenCalledWith('show-up');
+            expect(RSVPCtrl.showThankYou).toBe(true);
+        });
+
+        it('should set atLeastOneGoing to false if not at least one person is going', function() {
+            deferred.resolve();
+            scope.$apply();
+            expect(RSVPCtrl.atLeastOneGoing).toBe(false);
+        });
+
+        it('should set atLeastOneGoing to true if not at least one person is going', function() {
+            deferred.resolve();
+            scope.$apply();
+            formModel = {
+                "A0": {
+                    "firstName": "Darbie",
+                    "going": "0",
+                    "lastName": "Grant",
+                    "plusOne": false,
+                    "plusOneDependent": false
+                },
+                "B1": {
+                    "firstName": "Dave",
+                    "going": "1",
+                    "lastName": "Grant",
+                    "plusOne": false,
+                    "plusOneDependent": false
+                },
+                "C2": {
+                    "firstName": "Natalie",
+                    "going": "0",
+                    "lastName": "Grant",
+                    "plusOne": false,
+                    "plusOneDependent": false
+                },
+                "responded": false
+            };
+            RSVPCtrl.submit(formModel);
+            deferred.resolve();
+            scope.$apply();
+            expect(RSVPCtrl.atLeastOneGoing).toBe(true);
+        });
+
+        it('should set the from to pristine when successful', function() {
+            deferred.resolve();
+            scope.$apply();
+            expect(mockForm.$setPristine).toHaveBeenCalled();
         });
 
         it('should call add class with show-up when not successful', function() {
@@ -103,7 +154,7 @@ describe('Controller: RSVPCtrl', function () {
             expect($.fn.addClass).toHaveBeenCalledWith('show-up');
         });
 
-        it('should set showCloseButton false when the promise completes', function() {
+        it('should set showCloseButton false when not successful', function() {
             deferred.reject();
             scope.$apply();
             expect(RSVPCtrl.showCloseButton).toBe(false);

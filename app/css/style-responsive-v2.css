@@ -837,9 +837,9 @@
 		background: none;
 	}
 
-	.how-it-works-info h4 {
-		display: none;
-	}
+	/*.how-it-works-info h4 {*/
+		/*display: none;*/
+	/*}*/
 
 	.how-it-works-info,
 	.how-it-works-info p,

@@ -27,6 +27,23 @@
         vm.goingChanged = goingChanged;
 
         vm.mainNotGoing = false;
+        angular.forEach(vm.formModel, function(val, key) {
+            if(key !== 'responded') {
+                vm.goingChanged(val);
+            }
+        });
+
+        vm.showThankYou = false;
+
+        vm.authCalendar = authCalendar;
+
+
+        vm.atLeastOneGoing = undefined;
+
+        function authCalendar() {
+            console.log('huh');
+            vm.calendarResult.displaySuccess = true;
+        }
 
         function goingChanged(person) {
             if(!person.plusOneDependent) return;
@@ -46,13 +63,23 @@
         function submit(formModel) {
             vm.isSaving = true;
             rsvpData.save(formModel).then(function() {
-                // show toast
-                $('#success-notification').addClass('show-up');
+                // show thank you message
+                vm.showThankYou = true;
+                // see if we need to show the google calendar link
+                vm.atLeastOneGoing = false;
+                angular.forEach(formModel, function(val, key) {
+                    if(key !== 'responded') {
+                        if(val.going === '1' && !vm.mainNotGoing) {
+                            vm.atLeastOneGoing = true;
+                        }
+                    }
+                });
+                vm.form.$setPristine();
             }).catch(function() {
                 $('#error-notification').addClass('show-up');
+                vm.showCloseButton = false;
             }).then(function() {
                 vm.isSaving = false;
-                vm.showCloseButton = false;
             });
         }
     }
