@@ -6,7 +6,6 @@
 
 	function runUripV2() {
 		$(document).ready(function(){
-			console.log('running urip!');
 
 			/* =================
 			 Countdown Timer
