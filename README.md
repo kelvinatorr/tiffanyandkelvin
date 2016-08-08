@@ -40,6 +40,11 @@ change the Firebase init script tag in index.html to your own Firebase project
 ```
 
 ## Running the tests
+First install the angular-mocks bower component
+
+```
+bower install
+```
 
 You can run the unit test
 
@@ -66,4 +71,4 @@ This will create a build using gulp in the dist folder, and then deploy it to Fi
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/kelvinatorr/tiffanyandkelvin/blob/master/LICENSE) file for details
