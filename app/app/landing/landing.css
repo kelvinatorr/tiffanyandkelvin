@@ -43,3 +43,28 @@
         padding: 0 8px;
     }
 }
+
+@media (min-width: 768px) {
+    ul.how-it-works-col li:first-child:hover .how-it-works-info,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info h4,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info p,
+    ul.how-it-works-col li:first-child:hover .how-it-works-info p strong {
+        color: #fff;
+    }
+
+
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info h4,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p,
+    ul.how-it-works-col li:nth-child(2):hover .how-it-works-info p strong {
+        color: #fff;
+    }
+
+
+    ul.how-it-works-col li:last-child:hover .how-it-works-info,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info h4,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info p,
+    ul.how-it-works-col li:last-child:hover .how-it-works-info p strong {
+        color: #fff;
+    }
+}
