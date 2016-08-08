@@ -2627,11 +2627,6 @@ ul.how-it-works-col li:last-child:hover {
   * 9.0 COUNTER
   * -----------------------------------------------------------------------------
   */
-
-#counter {
-	background: url(../images/banners/countdown.jpg) center center no-repeat;
-}
-
 #counter .breaking-content {
 	padding-bottom: 70px;
 }

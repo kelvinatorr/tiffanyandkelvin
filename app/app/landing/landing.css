@@ -7,9 +7,18 @@
 .team-info {
     height: 345px;
 }
+
+
+#counter {
+    background: url(../../images/banners/countdown.jpg) center center no-repeat;
+}
 @media (max-width: 768px) {
     .team-info {
         height: 455px;
+    }
+
+    #counter {
+        background: url(../../images/banners/countdown-mobile.jpg) center center no-repeat;
     }
 }
 
