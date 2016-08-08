@@ -7,6 +7,13 @@
 .team-info {
     height: 345px;
 }
+@media (max-width: 768px) {
+    .team-info {
+        height: 455px;
+    }
+}
+
+
 
 .team-info h6 {
     font-size: 15px;
