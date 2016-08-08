@@ -6,20 +6,20 @@
     function LandingCtrl($scope, GoogleMapInit, $timeout) {
         var vm = this;
 
-        var fixHowItWorksLis = function() {
-            var howItWorksLis = $('.how-it-works-li');
-            var maxHowItWorksLiHeight = undefined;
-            howItWorksLis.each(function() {
-                var currentLi = $(this);
-                if(!maxHowItWorksLiHeight || maxHowItWorksLiHeight < currentLi.outerHeight()) {
-                    maxHowItWorksLiHeight = currentLi.outerHeight();
+        var fixOurStory = function() {
+            var listItems = $('.how-it-works-li');
+            var maxHeight = undefined;
+            listItems.each(function() {
+                var currentItem = $(this);
+                if(!maxHeight ||currentItem.outerHeight() > maxHeight) {
+                    maxHeight = currentItem.outerHeight();
                 }
             });
 
-            howItWorksLis.each(function() {
-                var currentLi = $(this);
-                if(currentLi.outerHeight() !== maxHowItWorksLiHeight) {
-                    currentLi.css('min-height', maxHowItWorksLiHeight);
+            listItems.each(function() {
+                var currentItem = $(this);
+                if(currentItem.outerHeight() !== maxHeight) {
+                    currentItem.css('min-height', maxHeight + 'px');
                 }
             });
         };
@@ -58,9 +58,9 @@
                 });
             });
 
-            fixHowItWorksLis();
+            fixOurStory();
         });
 
-        $(window).resize(fixHowItWorksLis);
+        $(window).resize(fixOurStory);
     }
 })(angular, window);
