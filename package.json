@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "lite": "lite-server",
-    "test": "karma start ./test/karma-conf.js"
+    "test": "karma start ./test/karma-conf.js",
+    "deploy": "gulp build && firebase deploy"
   },
   "license": "ISC",
   "dependencies": {},
