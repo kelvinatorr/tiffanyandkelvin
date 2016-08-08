@@ -3249,14 +3249,6 @@ ul.customer-logos li .customer-logo {
 	transition: opacity .35s ease-in-out;
 }
 
-ul.customer-logos li:hover .customer-logo {
-	opacity: 0;
-}
-
-ul.customer-logos li:hover .customer-quote {
-	opacity: 1;
-}
-
 .customer-box-wrapper hr {
 	margin: 0 auto;
 	max-width: 900px;
