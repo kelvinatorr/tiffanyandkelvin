@@ -11,6 +11,20 @@ describe('Controller: LandingCtrl', function () {
         scope,
         rootScope;
 
+    beforeEach(module(function($provide) {
+        //$provide.value('FirebaseFactory', {
+        //    database: mockDatabase
+        //});
+
+        $provide.factory('GoogleMapInit', function($q) {
+            var defer = $q.defer();
+            return {
+                mapsInitialized: defer.promise
+            }
+        });
+    }));
+
+
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
         rootScope = $rootScope;
