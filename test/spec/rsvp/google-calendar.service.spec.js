@@ -13,21 +13,28 @@ describe('Factory: GoogleCalendar', function() {
 
     var $q;
 
-    var mockEvents = {
-        insert: function() {
-            return {
-                execute: function(cb) {
-                    cb();
-                }
-            }
-        }
-    };
+    var mockEvents;
+
+    var calendarItems = [];
 
     beforeEach(inject(function (_GoogleCalendar_, _$rootScope_, _$q_, _$window_) {
         rootScope =  _$rootScope_;
         GoogleCalendar = _GoogleCalendar_;
 
         $q = _$q_;
+
+        mockEvents = {
+            insert: function() {
+                return $q.resolve();
+            },
+            list: function() {
+                return $q.resolve({
+                    result: {
+                        items: calendarItems
+                    }
+                });
+            }
+        };
 
         _$window_.gapi = {
             auth: {
@@ -62,10 +69,22 @@ describe('Factory: GoogleCalendar', function() {
             expect('then' in actual).toBe(true);
         });
 
-        it('should call gapi.client.calendar.events.insert method', function() {
+        it('should call gapi.client.calendar.events.insert method when no items match the wedding summary', function() {
+            calendarItems = [
+                {summary: 'Hello World Event'}
+            ];
             GoogleCalendar.setCalendarEvent();
             rootScope.$apply();
             expect(mockEvents.insert).toHaveBeenCalled();
+        });
+
+        it('should NOT call gapi.client.calendar.events.insert method when an item matching the wedding summary exists', function() {
+            calendarItems = [
+                {summary: 'Tiffany and Kelvin Wedding'}
+            ];
+            GoogleCalendar.setCalendarEvent();
+            rootScope.$apply();
+            expect(mockEvents.insert).not.toHaveBeenCalled();
         });
 
     });

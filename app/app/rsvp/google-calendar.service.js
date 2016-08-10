@@ -26,38 +26,59 @@
             var defer = $q.defer();
 
             var setEvent = function() {
+                var summary = 'Tiffany and Kelvin Wedding';
                 // TODO: check if event is already there
-                var event = {
-                    'summary': 'Tiffany and Kelvin Wedding',
-                    'location': '3555 S Las Vegas Blvd, Las Vegas, NV 89109',
-                    'description': 'Tiffany and Kelvin are getting married.',
-                    'guestsCanInviteOthers': false,
-                    'start': {
-                        'dateTime': '2016-12-18T15:00:00',
-                        'timeZone': 'America/Los_Angeles'
-                    },
-                    'end': {
-                        'dateTime': '2016-12-19T00:00:00',
-                        'timeZone': 'America/Los_Angeles'
-                    },
-                    'reminders': {
-                        'useDefault': false,
-                        'overrides': [
-                            {'method': 'email', 'minutes': 24 * 60 * 7},
-                            {'method': 'popup', 'minutes': 24 * 60}
-                        ]
+                var request = gapi.client.calendar.events.list({
+                    'calendarId': 'primary',
+                    'timeMin': '2016-12-18T00:00:00Z',
+                    'timeMax': '2016-12-19T00:00:00Z',
+                    'showDeleted': false,
+                    'singleEvents': true,
+                    'q': summary
+                });
+                request.then(function(resp) {
+                    var events = resp.result.items;
+                    var exists = false;
+                    for(var i = 0; i < events.length; i++) {
+                        if(events[i].summary === summary) {
+                            exists = true;
+                            break;
+                        }
                     }
-                };
-                 var insertRequest = gapi.client.calendar.events.insert({
-                     'calendarId': 'primary',
-                     'resource': event
-                 });
+                    if(exists) {
+                        defer.resolve();
+                    } else {
+                        var event = {
+                            'summary': summary,
+                            'location': '3555 S Las Vegas Blvd, Las Vegas, NV 89109',
+                            'description': 'Tiffany and Kelvin are getting married.',
+                            'guestsCanInviteOthers': false,
+                            'start': {
+                                'dateTime': '2016-12-18T15:00:00',
+                                'timeZone': 'America/Los_Angeles'
+                            },
+                            'end': {
+                                'dateTime': '2016-12-19T00:00:00',
+                                'timeZone': 'America/Los_Angeles'
+                            },
+                            'reminders': {
+                                'useDefault': false,
+                                'overrides': [
+                                    {'method': 'email', 'minutes': 24 * 60 * 7},
+                                    {'method': 'popup', 'minutes': 24 * 60}
+                                ]
+                            }
+                        };
+                        return gapi.client.calendar.events.insert({
+                            'calendarId': 'primary',
+                            'resource': event
+                        });
+                    }
+                }).then(function() {
+                    // success
+                    defer.resolve();
+                });
 
-                 insertRequest.execute(function(event) {
-                     // success
-                     defer.resolve();
-                     //TODO: save to firebase database.
-                 });
             };
             if(!authorized) {
                 gapi.auth.authorize({client_id: CLIENT_ID, scope: SCOPES, immediate: false}).then(function() {
