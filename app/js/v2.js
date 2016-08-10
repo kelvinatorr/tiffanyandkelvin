@@ -4,6 +4,8 @@
 
 	window.tak.runUripV2 = runUripV2;
 
+	window.tak.headhesive;
+
 	function runUripV2() {
 		$(document).ready(function(){
 
@@ -160,7 +162,7 @@
 					unstick: 'header-unstick'
 				}
 			};
-			var headhesive = new Headhesive('.the-header', options);
+			window.tak.headhesive = new Headhesive('.the-header', options);
 
 			// Remove class of the clone header
 			// so we can distinguish between the original and the clone header.
