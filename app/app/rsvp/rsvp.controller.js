@@ -7,7 +7,7 @@
     angular.module('tiffanyAndKelvin')
         .controller('RSVPCtrl', RSVPCtrl);
 
-    function RSVPCtrl(rsvpData) {
+    function RSVPCtrl(rsvpData, GoogleCalendar) {
         var vm = this;
 
         vm.formModel = rsvpData.data;
@@ -37,12 +37,17 @@
 
         vm.authCalendar = authCalendar;
 
-
         vm.atLeastOneGoing = undefined;
 
+        vm.calendarEventAdded = false;
+
         function authCalendar() {
-            console.log('huh');
-            vm.calendarResult.displaySuccess = true;
+            GoogleCalendar.initialized.then(function() {
+               GoogleCalendar.setCalendarEvent().then(function() {
+                   // show success message
+                   vm.calendarEventAdded = true;
+               });
+            });
         }
 
         function goingChanged(person) {
