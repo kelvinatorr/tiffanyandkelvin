@@ -39,12 +39,13 @@
 
         vm.atLeastOneGoing = undefined;
 
+        vm.calendarEventAdded = false;
+
         function authCalendar() {
             GoogleCalendar.initialized.then(function() {
                GoogleCalendar.setCalendarEvent().then(function() {
-                   //vm.calendarResult.displaySuccess = true;
-                   //TODO: show success message.
-                   console.log('success');
+                   // show success message
+                   vm.calendarEventAdded = true;
                });
             });
         }

@@ -16,6 +16,17 @@ describe('Controller: RSVPCtrl', function () {
         data: {}
     };
 
+    beforeEach(module(function($provide) {
+
+        $provide.factory('GoogleCalendar', function($q) {
+            //calendarInitDefer = $q.defer();
+            return {
+                initialized: $q.resolve(),
+                setCalendarEvent: function() {return $q.resolve();}
+            }
+        });
+    }));
+
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope, $q) {
         rootScope = $rootScope;
@@ -62,6 +73,16 @@ describe('Controller: RSVPCtrl', function () {
         var expected = false;
         var actual = RSVPCtrl.showErrors(element, idx);
         expect(actual).toBe(expected);
+    });
+
+    it('should initialize calendarEventAdded to false', function() {
+        expect(RSVPCtrl.calendarEventAdded).toBe(false);
+    });
+
+    it('should set calendarEventAdded to true if setCalendarEvent resolves', function() {
+        RSVPCtrl.authCalendar();
+        scope.$apply();
+        expect(RSVPCtrl.calendarEventAdded).toBe(true);
     });
 
     describe('closeToast', function() {
