@@ -54,6 +54,9 @@ gulp.task('copy-files', function() {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 
+    var uiBootstrap = gulp.src('app/js/ui-bootstrap/ui-bootstrap-custom-tpls-2.0.1.min.js')
+        .pipe(gulp.dest('dist/js/ui-bootstrap'));
+
     var templates = gulp.src('app/app/**/*.html')
         .pipe(htmlmin({removeComments: true, collapseWhitespace: true, conservativeCollapse: true}))
         .pipe(gulp.dest('dist/app'));
@@ -83,16 +86,16 @@ gulp.task('build-html', function () {
         .pipe(gulpif('css/*.css', minifyCss())) // Minify vendor CSS sources
         .pipe(gulpif(condition, rev()))                // Rename the concatenated files
         .pipe(revReplace())         // Substitute in new filenames
-        .pipe(htmlmin({removeComments: true}))
+        //.pipe(htmlmin({removeComments: true}))
         .pipe(gulp.dest('dist'));
 });
 
-var imagemin = require('gulp-imagemin');
 
-gulp.task('image-min', function() {
-    return gulp.src('app/images/thumbnail-strip/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'));
+
+gulp.task('minify-index-html', function() {
+    return gulp.src('dist/index.html')
+        .pipe(htmlmin({removeComments: true}))
+        .pipe(gulp.dest('dist'));
 });
 
 
@@ -100,6 +103,6 @@ gulp.task('image-min', function() {
 gulp.task('build', function(callback) {
     runSequence('clean-dist',
         ['copy-files'],
-        'build-html',
+        'build-html', 'minify-index-html',
         callback);
 });
