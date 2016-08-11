@@ -84,3 +84,36 @@
         color: #fff;
     }
 }
+
+#galleryModalBody {
+    max-height: 95vh;
+}
+
+#galleryModalBody .carousel-control.left {
+    background-image: linear-gradient(to right,rgba(0,0,0,.1) 0,rgba(0,0,0,.0001) 100%);
+}
+
+#galleryModalBody .carousel-control.right {
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.1) 100%);
+}
+
+#galleryModalBody a>.icon-cross {
+    font-size: 20px;
+}
+
+#galleryCarousel:focus {
+    outline: none;
+}
+
+#customer-story .customer-logo {
+    cursor: pointer;
+}
+
+.tak-gallery-img {
+    margin: auto;
+    max-height: 80vh;
+}
+
+.tak-margin-bottom-8 {
+    margin-bottom: 8px;
+}

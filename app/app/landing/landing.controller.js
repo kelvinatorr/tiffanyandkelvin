@@ -3,7 +3,7 @@
     angular.module('tiffanyAndKelvin')
         .controller('LandingCtrl', LandingCtrl);
 
-    function LandingCtrl($scope, GoogleMapInit, $timeout) {
+    function LandingCtrl($scope, GoogleMapInit, $timeout, $uibModal) {
         var vm = this;
 
         var fixOurStory = function() {
@@ -25,6 +25,10 @@
         };
 
         vm.mapsApiFailed = false;
+
+        vm.openEdytaGallery = openEdytaGallery;
+
+        vm.openRenGallery = openRenGallery;
 
         $scope.$on('$viewContentLoaded', function() {
             window.tak.runUripV2();
@@ -62,5 +66,50 @@
         });
 
         $(window).resize(fixOurStory);
+
+        function openEdytaGallery(idx) {
+            var images =  [
+                {id: 0, image: 'images/thumbnail-strip/0003-lrg.jpg'},
+                {id: 1, image: 'images/thumbnail-strip/0020-lrg.jpg'},
+                {id: 2, image: 'images/thumbnail-strip/0039-lrg.jpg'},
+                {id: 3, image: 'images/thumbnail-strip/0051-lrg.jpg'},
+                {id: 4, image: 'images/thumbnail-strip/0116-lrg.jpg'},
+                {id: 5, image: 'images/thumbnail-strip/0147-lrg.jpg'}
+            ];
+            openGalleryModal(idx, images);
+        }
+
+        function openRenGallery(idx) {
+            var images =  [
+                {id: 0, image: 'images/engagement/_REN1339-Edit-lrg.jpg'},
+                {id: 1, image: 'images/engagement/_REN1369-Edit-lrg.jpg'},
+                {id: 2, image: 'images/engagement/_REN1656-lrg.jpg'},
+                {id: 3, image: 'images/engagement/_REN1690-Edit-lrg.jpg'},
+                {id: 4, image: 'images/engagement/_REN1708-Edit-lrg.jpg'},
+                {id: 5, image: 'images/engagement/_REN1722-Edit-lrg.jpg'},
+                {id: 6, image: 'images/engagement/_REN1788-lrg.jpg'},
+                {id: 7, image: 'images/engagement/_REN1800-lrg.jpg'},
+                {id: 8, image: 'images/engagement/_REN1853-Edit-lrg.jpg'}
+            ];
+            openGalleryModal(idx, images);
+        }
+
+        function openGalleryModal(idx, images) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/landing/gallery-modal.html',
+                controller: 'GalleryModalCtrl',
+                controllerAs: 'vm',
+                size: 'lg',
+                resolve: {
+                    startIdx: function() {
+                        return idx;
+                    },
+                    images: function () {
+                        return images;
+                    }
+                }
+            });
+        }
     }
 })(angular, window);

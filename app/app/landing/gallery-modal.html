@@ -1,0 +1,18 @@
+<div class="modal-body" id="galleryModalBody">
+    <div class="row tak-margin-bottom-8">
+        <div class="col-xs-12 text-right">
+            <a role="button" ng-click="vm.close()">
+                <span class="icon-cross"></span>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="galleryCarousel" uib-carousel active="vm.startIdx" no-wrap="true" keyboard-controls autofocus>
+                <div uib-slide ng-repeat="i in vm.images track by i.id" index="i.id">
+                    <img class="tak-gallery-img" ng-src="{{::i.image}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

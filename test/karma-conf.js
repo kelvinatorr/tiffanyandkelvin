@@ -23,10 +23,12 @@ module.exports = function(config) {
             // bower:js
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-loader.min.js',
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js',
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js',
             'https://www.gstatic.com/firebasejs/live/3.0/firebase.js',
             'bower_components/angular-mocks/angular-mocks.js',
             // endbower
+            'app/js/ui-bootstrap/ui-bootstrap-custom-tpls-2.0.1.min.js',
             "app/app/**/*.js",
             //"test/mock/**/*.js",
             "test/spec/**/*.js",
