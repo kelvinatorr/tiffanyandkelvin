@@ -11,6 +11,10 @@ describe('Controller: LandingCtrl', function () {
         scope,
         rootScope;
 
+    var mock$uibModal = {
+        open: function() {}
+    };
+
     beforeEach(module(function($provide) {
         //$provide.value('FirebaseFactory', {
         //    database: mockDatabase
@@ -30,11 +34,13 @@ describe('Controller: LandingCtrl', function () {
         rootScope = $rootScope;
         scope = $rootScope.$new();
         LandingCtrl = $controller('LandingCtrl', {
-            $scope: scope
+            $scope: scope,
+            $uibModal: mock$uibModal
         });
         window.tak = window.tak || {};
         window.tak.runUripV2 = function() {};
         spyOn(window.tak, 'runUripV2');
+        spyOn(mock$uibModal, 'open');
     }));
 
     it('should run urip when $viewContentLoaded', function() {
@@ -45,5 +51,14 @@ describe('Controller: LandingCtrl', function () {
 
     it('should initialize mapsApiFailed to false', function() {
         expect(LandingCtrl.mapsApiFailed).toBe(false);
+    });
+
+    it('should call the open method on $uibModal when openRenGallery is called', function() {
+        LandingCtrl.openRenGallery(2);
+        expect(mock$uibModal.open).toHaveBeenCalled();
+    });
+    it('should call the open method on $uibModal when openEdytaGallery is called', function() {
+        LandingCtrl.openEdytaGallery(0);
+        expect(mock$uibModal.open).toHaveBeenCalled();
     });
 });
