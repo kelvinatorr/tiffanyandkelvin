@@ -4,7 +4,7 @@
 (function() {
     'use strict';
 
-    var app = angular.module('tiffanyAndKelvin', ['ui.router']);
+    var app = angular.module('tiffanyAndKelvin', ['ui.router','ngAnimate', 'ui.bootstrap']);
 
     app.config(['$compileProvider','$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider', AppConfig]);
 
@@ -17,7 +17,12 @@
                 url: '/main',
                 templateUrl: 'app/landing/landing.html',
                 controller: 'LandingCtrl',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                onExit: function() {
+                    if(window.tak.headhesive) {
+                        window.tak.headhesive.destroy();
+                    }
+                }
             })
             .state('rsvp-code', {
                 url: '/rsvp-code',

@@ -56,13 +56,16 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row" ng-if="vm.showThankYou && !vm.form.$dirty" style="margin-top: 13px;">
+                        <div class="row tak-margin-top-13" ng-if="vm.showThankYou && !vm.form.$dirty">
                             <div class="col-lg-12 centered">
-                                <h4 style="color: #fff;">Thank you for your response.</h4>
-                                <a role="button" style="margin-bottom: 0;" ng-if="vm.atLeastOneGoing && !vm.form.$dirty"
+                                <h4 id="thankYouH4">Thank you for your response.</h4>
+                                <a role="button" class="tak-margin-bottom-0" ng-if="vm.atLeastOneGoing && !vm.form.$dirty && !vm.calendarEventAdded"
                                    ng-click="vm.authCalendar()">
-                                    Would you like to add our wedding to your Google Calendar?
+                                    Add our wedding to your Google Calendar?
                                 </a>
+                                <p class="tak-margin-bottom-0" ng-if="vm.atLeastOneGoing && !vm.form.$dirty && vm.calendarEventAdded">
+                                    Our wedding has been added to your calendar.
+                                </p>
                             </div>
                         </div>
                     </form> <!--/ .contact-form -->
@@ -72,11 +75,6 @@
         </div> <!--/ .row -->
     </div> <!--/ .container -->
 </div> <!--/ .contact-overlay -->
-<div id="success-notification" class="notif-box">
-    <span class="icon-checkmark notif-icon"></span>
-    <p>Thank you for your response.</p>
-    <a class="notification-close" ui-sref="landing">Close</a>
-</div>
 <div id="error-notification" class="notif-box">
     <span class="icon-bullhorn notif-icon"></span>
     <p>There was a problem saving your response. Please try again.</p>

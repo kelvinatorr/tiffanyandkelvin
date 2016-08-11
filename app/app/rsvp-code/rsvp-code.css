@@ -43,6 +43,18 @@
     position: absolute;
 }
 
+.tak-margin-top-13 {
+    margin-top: 13px;
+}
+
 .tak-margin-top-0 {
     margin-top: 0;
+}
+
+.tak-margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+#thankYouH4 {
+    color: #fff;
 }
