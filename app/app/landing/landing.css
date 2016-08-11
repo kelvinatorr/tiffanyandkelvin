@@ -101,6 +101,10 @@
     font-size: 20px;
 }
 
+#galleryCarousel:focus {
+    outline: none;
+}
+
 #customer-story .customer-logo {
     cursor: pointer;
 }
