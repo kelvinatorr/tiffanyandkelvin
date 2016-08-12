@@ -10,7 +10,7 @@
       "source" : "**/*.@(js|css)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=7200"
+        "value" : "max-age=604800"
       } ]
     }, {
       "source" : "**/*.@(jpg|jpeg|gif|png)",
