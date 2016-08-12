@@ -8,7 +8,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div id="galleryCarousel" uib-carousel active="vm.startIdx" no-wrap="true" keyboard-controls autofocus>
+            <div id="galleryCarousel" uib-carousel active="vm.startIdx" no-wrap="true" keyboard-controls autofocus
+                 ng-swipe-left="vm.swipe('left')" ng-swipe-right="vm.swipe('right')">
                 <div uib-slide ng-repeat="i in vm.images track by i.id" index="i.id">
                     <img class="tak-gallery-img" ng-src="{{::i.image}}">
                 </div>

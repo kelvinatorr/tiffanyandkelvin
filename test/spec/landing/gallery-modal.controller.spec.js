@@ -15,9 +15,10 @@ describe('Controller: GalleryModalCtrl', function () {
         close: function() {}
     };
 
-    var startIdx = 5;
+    var startIdx = 0;
 
     var images = [
+        {id: 1, image: 'Foo Bar'},
         {id: 2, image: 'Hello World'}
     ];
 
@@ -46,6 +47,28 @@ describe('Controller: GalleryModalCtrl', function () {
     it('should set images to the images passed in', function() {
         var actual = GalleryModalCtrl.images;
         expect(images).toEqual(actual);
+    });
+
+    it('should add one to the startIdx if swipe left is called and we are not at the end', function() {
+        GalleryModalCtrl.swipe('left');
+        expect(GalleryModalCtrl.startIdx).toBe(1);
+    });
+
+    it('should not add one to the startIdx if swipe left is called and we are at the end', function() {
+        GalleryModalCtrl.startIdx = 1;
+        GalleryModalCtrl.swipe('left');
+        expect(GalleryModalCtrl.startIdx).toBe(1);
+    });
+
+    it('should add one to the startIdx if swipe left is called and we are not at the end', function() {
+        GalleryModalCtrl.swipe('right');
+        expect(GalleryModalCtrl.startIdx).toBe(0);
+    });
+
+    it('should add one to the startIdx if swipe left is called and we are not at the end', function() {
+        GalleryModalCtrl.startIdx = 1;
+        GalleryModalCtrl.swipe('right');
+        expect(GalleryModalCtrl.startIdx).toBe(0);
     });
 
 
