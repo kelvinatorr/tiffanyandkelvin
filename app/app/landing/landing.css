@@ -58,6 +58,10 @@
     .customer-logo {
         padding: 0 8px;
     }
+
+    .event-layout #hero {
+        background: url(../../images/banners/footer-mobile.jpg) center center no-repeat;
+    }
 }
 
 @media (min-width: 768px) {
