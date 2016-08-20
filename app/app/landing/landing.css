@@ -130,3 +130,11 @@
 .tak-margin-bottom-8 {
     margin-bottom: 8px;
 }
+
+#roomBlockDetails {
+    max-height: 82vh; overflow-y: auto;
+}
+
+#roomBlockDetails>.col-xs-12>h5 {
+    margin: 26px 0 26px 0;
+}

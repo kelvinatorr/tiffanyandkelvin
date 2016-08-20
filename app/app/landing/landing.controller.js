@@ -30,6 +30,8 @@
 
         vm.openRenGallery = openRenGallery;
 
+        vm.openRoomBlockModal = openRoomBlockModal;
+
         $scope.$on('$viewContentLoaded', function() {
             window.tak.runUripV2();
             GoogleMapInit.mapsInitialized.then(function() {
@@ -66,6 +68,16 @@
         });
 
         $(window).resize(fixOurStory);
+
+        function openRoomBlockModal() {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/landing/room-block-modal.html',
+                controller: 'RoomBlockModalCtrl',
+                controllerAs: 'vm',
+                size: 'lg'
+            });
+        }
 
         function openEdytaGallery(idx) {
             var images =  [
