@@ -138,3 +138,11 @@
 #roomBlockDetails>.col-xs-12>h5 {
     margin: 26px 0 26px 0;
 }
+
+.tak-padding-top-25 {
+    padding-top: 25px;
+}
+
+.tak-font-size-13 {
+    font-size: 13px;
+}
