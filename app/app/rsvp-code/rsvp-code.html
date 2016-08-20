@@ -4,7 +4,7 @@
         <div class="row">
             <div class="contact-content col-lg-10 col-lg-offset-1 centered">
                 <h2 class="all-caps"> Répondez s'il vous plaît </h2>
-                <p>Enter your RSVP code below</p>
+                <p>Enter your RSVP access code from your invitation below.</p>
                 <!-- BEGIN Contact Form -->
                 <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
                     <form class="contact-form" id="contact-form" name="vm.form" novalidate
@@ -14,7 +14,7 @@
                                 <div class="required-field"
                                      ng-class="{'field-error': vm.form.code.$invalid && vm.form.code.$dirty}">
                                     <input name="code" class="contact-input" type="text"
-                                           placeholder="RSVP Code" required ng-model="vm.formModel.code" autofocus
+                                           placeholder="RSVP Access Code" required ng-model="vm.formModel.code" autofocus
                                             ng-change="vm.codeWatcher(vm.formModel.code);" input-uppercase>
                                 </div>
                                 <span class="tak-error-message" ng-if="vm.form.code.$dirty && vm.form.code.$invalid">
