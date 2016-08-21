@@ -4,7 +4,7 @@
 (function() {
     'use strict';
 
-    var app = angular.module('tiffanyAndKelvin', ['ui.router','ngAnimate', 'ui.bootstrap']);
+    var app = angular.module('tiffanyAndKelvin', ['ui.router','ngAnimate', 'ui.bootstrap', 'ngTouch']);
 
     app.config(['$compileProvider','$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider', AppConfig]);
 

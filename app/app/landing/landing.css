@@ -58,6 +58,10 @@
     .customer-logo {
         padding: 0 8px;
     }
+
+    .event-layout #hero {
+        background: url(../../images/banners/footer-mobile.jpg) center center no-repeat;
+    }
 }
 
 @media (min-width: 768px) {
@@ -101,6 +105,15 @@
     font-size: 20px;
 }
 
+#galleryCarousel a.disabled {
+    cursor: default;
+}
+
+#galleryCarousel a.disabled:hover {
+    cursor: default;
+    opacity: 0.5;
+}
+
 #galleryCarousel:focus {
     outline: none;
 }
@@ -116,4 +129,20 @@
 
 .tak-margin-bottom-8 {
     margin-bottom: 8px;
+}
+
+#roomBlockDetails {
+    max-height: 82vh; overflow-y: auto;
+}
+
+#roomBlockDetails>.col-xs-12>h5 {
+    margin: 26px 0 26px 0;
+}
+
+.tak-padding-top-25 {
+    padding-top: 25px;
+}
+
+.tak-font-size-13 {
+    font-size: 13px;
 }

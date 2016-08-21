@@ -54,14 +54,15 @@ gulp.task('copy-files', function() {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 
-    var uiBootstrap = gulp.src('app/js/ui-bootstrap/ui-bootstrap-custom-tpls-2.0.1.min.js')
+    var uiBootstrap = gulp.src('app/js/ui-bootstrap/ui-bootstrap-custom-tpls-2.0.1.tak.js')
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js/ui-bootstrap'));
 
     var templates = gulp.src('app/app/**/*.html')
         .pipe(htmlmin({removeComments: true, collapseWhitespace: true, conservativeCollapse: true}))
         .pipe(gulp.dest('dist/app'));
 
-    return merge(imgs, css, preMinifiedCss,preMinifiedJS,jsFiles,templates, fonts);
+    return merge(imgs, css, preMinifiedCss,preMinifiedJS, uiBootstrap, jsFiles,templates, fonts);
 });
 
 
