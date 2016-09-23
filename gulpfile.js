@@ -82,8 +82,8 @@ gulp.task('build-html', function () {
     // concatenate, annotate, minify our js files
     return gulp.src("app/index.html")
         .pipe(useref())      // Concatenate with gulp-useref
-        .pipe(gulpif('js/*.js',ngAnnotate()))
-        .pipe(gulpif('js/*.js',uglify()))
+        .pipe(gulpif('app/*.js',ngAnnotate()))
+        .pipe(gulpif('app/*.js',uglify()))
         .pipe(gulpif('css/*.css', minifyCss())) // Minify vendor CSS sources
         .pipe(gulpif(condition, rev()))                // Rename the concatenated files
         .pipe(revReplace())         // Substitute in new filenames
